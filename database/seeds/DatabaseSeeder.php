@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        DB::table('champions')->insert([
+            'name' => 'Annie',
+            'title' => 'Şeytan Çekici',
+            'key' => 'Annie',
+        ]);
     }
 }
