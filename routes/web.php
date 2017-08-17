@@ -15,5 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/rito', 'DemoController@index');
+Route::post('/user_detail', 'DemoController@user_detail');
 
-Route::get('/{summoner_name}','MatchController@get_live_game');
+
+Route::get('/champion/{name}', 'DemoController@getChampion');
+Route::get('/mastery/{id}', 'DemoController@mastery');

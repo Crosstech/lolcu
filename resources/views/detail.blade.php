@@ -1,0 +1,1 @@
+{{ dump($current_game) }}

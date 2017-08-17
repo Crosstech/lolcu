@@ -11,7 +11,7 @@ class MatchController extends Controller
         
          $client = new \GuzzleHttp\Client();
         
-         //$uri= 'https://tr1.api.riotgames.com/lol/static-data/v3/items?locale=tr_TR&api_key='.env('RITO_API_KEY');
+         $uri= 'https://tr1.api.riotgames.com/lol/static-data/v3/items?locale=tr_TR&api_key='.env('RITO_API_KEY');
         
          $response = $client->get($uri);
          $body = $response->getBody();
