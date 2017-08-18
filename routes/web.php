@@ -11,13 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index');
+
+Route::get('/profil/{region}/{name}', [
+	'uses'=>'HomeController@profile_index',	
+	'as'=>'profile',
+]);
+
+Route::group(['prefix' => 'api/v1'], function () {
+
+    // Static Data
+
+
+    // Match Data
+
+    // Summoner Data
 });
 
-Route::get('/rito', 'DemoController@index');
-Route::post('/user_detail', 'DemoController@user_detail');
-
-
-Route::get('/champion/{name}', 'DemoController@getChampion');
-Route::get('/mastery/{id}', 'DemoController@mastery');
+Route::post('/profile_get', 'HomeController@profile_get');

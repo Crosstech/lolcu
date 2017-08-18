@@ -41,7 +41,7 @@ class RiotApi {
 	const API_URL_SUMMONER_3 = 'https://{platform}.api.riotgames.com/lol/summoner/v3/';
 
 
-	const API_KEY = 'RGAPI-dfaaa916-ed85-4205-a7b8-0164fbe53b1d';
+	const API_KEY = 'RGAPI-3a164cde-3abd-4539-8083-f932dfe129cd';
 
 	// Rate limit for 10 minutes
 	const LONG_LIMIT_INTERVAL = 600;
@@ -258,7 +258,7 @@ class RiotApi {
 	
 	//returns an account id
 	public function getSummonerAccountId($name) {
-			$name = strtolower($name);
+			$name = strtolower(rawurlencode(utf8_encode($name)));
 			$summoner = $this->getSummonerByName($name);
 			if (self::DECODE_ENABLED) {
 				return $summoner['accountId'];
