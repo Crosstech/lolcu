@@ -9,23 +9,33 @@ class MatchController extends Controller
 {
     public function get_live_game($summoner_name){
         
-         $client = new \GuzzleHttp\Client();
+        //  $client = new \GuzzleHttp\Client();
+    
+        // $uri= 'https://tr1.api.riotgames.com/lol/static-data/v3/runes?locale=tr_TR&api_key=RGAPI-8829b516-8837-4950-8fa6-c65a78a14318';
+    
+        // $response = $client->get($uri);
+        // $body = $response->getBody();
+        // $obj= json_decode($body);
+
+        // dd($obj->data[0]->id);
+        // foreach($obj->data as $champion)
+        // {
+            
+        // }
         
-         $uri= 'https://tr1.api.riotgames.com/lol/static-data/v3/items?locale=tr_TR&api_key='.env('RITO_API_KEY');
+
+        $path = storage_path().'/json/summoner-rito.json';
+        // $path = storage_path().'/json/summoner.json';
+
+        $json = json_decode(file_get_contents($path),true);
         
-         $response = $client->get($uri);
-         $body = $response->getBody();
-         $obj= json_decode($body);
-              
-        foreach($obj->data as $champion)
+        dd($json['data']);
+        foreach($json['data'] as $champ)
         {
-            if(isset($champion->name)){
-            print_r($champion->name);
-            }
-            else
-            print_r('naah');
+            // print_r($champ);
+            dump($champ);
+
         }
-        //dd($obj);
 
         return view('index',compact('obj'));
     }
