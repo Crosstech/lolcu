@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use RiotApi;
 
@@ -30,4 +31,8 @@ class HomeController extends Controller
         return view('detail', compact('current_game', 'summoner'));
     }
 
+    public function test(){
+        $champions = DB::table('champions')->get();
+        dd($champions);
+    }
 }
