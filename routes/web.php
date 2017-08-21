@@ -25,25 +25,35 @@ Route::group(['prefix' => 'api/v1'], function () {
 		'uses' => 'StaticDataController@get_all_champions',
 		'as'   => 'sd.champions',
 	]);
+
     Route::get('/items', [
 		'uses' => 'StaticDataController@get_all_items',
 		'as'   => 'sd.items',
 	]);
+
     Route::get('/masteries', [
 		'uses' => 'StaticDataController@get_all_masteries',
 		'as'   => 'sd.masteries',
 	]);
+
     Route::get('/profile_icons', [
 		'uses' => 'StaticDataController@get_all_profile_icons',
 		'as'   => 'sd.profile_icons',
 	]);
+
     Route::get('/runes', [
 		'uses' => 'StaticDataController@get_all_runes',
 		'as'   => 'sd.runes',
 	]);
+
     Route::get('/summoner_spells', [
 		'uses' => 'StaticDataController@get_all_summoner_spells',
 		'as'   => 'sd.summoner_spells',
+	]);
+
+	Route::get('/static_data', [
+		'uses' => 'StaticDataController@get_all_static_data',
+		'as' => 'sd.all'
 	]);
     
 

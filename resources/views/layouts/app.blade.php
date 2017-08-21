@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="lolcu/img/favicon.ico">
@@ -10,9 +10,7 @@
 
     <!-- CSRF Token -->
 	<meta content="{{ csrf_token() }}" name="csrf-token" />
-	<title>
-		{{ config('app.name', 'Lolcu') }}
-	</title>
+	<title>@yield('title') | LOLCU.com </title>
 
     <base href="/" />
 
@@ -24,7 +22,7 @@
     <link href="lolcu/css/custom.css" rel="stylesheet" />
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=latin-ext" rel="stylesheet">
     <link href="lolcu/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
     <script>
