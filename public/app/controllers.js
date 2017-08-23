@@ -10,7 +10,7 @@ app.controller('mainController', function($scope, $http) {
 
     $scope.seed = function() {
 		$http.get('/api/v1/static_data').
-		success(function(data, status, headers, config) {
+		then(function(data) {
             console.log(data);
 		});
     }

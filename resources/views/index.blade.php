@@ -11,11 +11,11 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+    <div class="col-md-6 col-md-offset-3 col-xs-12">
         <form action="{{ url('/profile_get') }}" method="POST" class="row">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             
-            <div class="col-xs-5">
+            <div class="col-md-5 col-xs-12 mbx-20">
                 <select id="region_selector" name="region"  class="form-control">
                     <option value="na1">Kuzey Amerika</option>
                     <option value="euw1">AB Batı</option>
@@ -31,11 +31,11 @@
                 </select>
             </div>
 
-            <div class="col-xs-5">
+            <div class="col-md-5 col-xs-12 mbx-20">
                 <input type="text" name="summoner_name" id="summoner_name" placeholder="Sihirdar Adı" class="form-control">
             </div>
 
-            <div class="col-xs-2">
+            <div class="col-md-2 col-xs-12 mbx-20">
                 <input type="submit" value="Ara" class="btn btn-info btn-fill pull-right">
             </div>
         </form>

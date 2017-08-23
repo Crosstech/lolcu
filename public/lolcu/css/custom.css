@@ -77,3 +77,11 @@ tr.redTeam {
     font-size: 24px;
     text-align: center;
 }
+
+/* Media Queries */
+
+@media (max-width: 991px) {
+    .mbx-20{
+        margin-bottom: 20px;
+    }
+}
