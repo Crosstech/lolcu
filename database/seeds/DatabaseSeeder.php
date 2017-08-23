@@ -37,10 +37,12 @@ class DatabaseSeeder extends Seeder
         // $path = storage_path().'/json/item.json';
 
         // $json = json_decode(file_get_contents($path),true);
+        // $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
+        // $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
 
         // foreach($json['data']as $i){
 
-        //     $item_plaintext="";
+        //     $item_plaintext = "";
         //     $item_name = "";
         //     $item_description = "";
         //     $item_id = explode(".",$i['image']['full'])[0];
@@ -50,7 +52,10 @@ class DatabaseSeeder extends Seeder
         //     }
         //     if(isset($i['name'])){
         //         $item_name=$i['name'];
+        //         $seo_uyumlu_link = str_replace($turkce, $duzgun, $i['name']);
+        //         $seo = str_slug($seo_uyumlu_link);
         //     }
+
         //     if(isset($i['description'])){
         //         $item_description=$i['description'];
         //     }
@@ -61,16 +66,21 @@ class DatabaseSeeder extends Seeder
         //         'plaintext'=>$item_plaintext,
         //         'image'=>$i['image']['full'],
         //         'gold_buy'=>$i['gold']['total'],
-        //         'gold_sell'=>$i['gold']['sell']
-
+        //         'gold_sell'=>$i['gold']['sell'],
+        //         'seo'=>$seo
         //     ]);
-
+        // }
         //mastery
         // $path = storage_path().'/json/mastery.json';
+
+        // $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
+        // $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
 
         // $json = json_decode(file_get_contents($path),true);
 
         // foreach($json['data'] as $m){
+        // $seo_uyumlu_link = str_replace($turkce, $duzgun, $m['name']);
+        // $seo = str_slug($seo_uyumlu_link);
         //     $d2="";
         //     $d3="";
         //     $d4="";
@@ -98,8 +108,10 @@ class DatabaseSeeder extends Seeder
         //         'description5'=>$d5,
         //         'image'=>$m['image']['full'],
         //         'ranks'=>$m['ranks'],
-        //         'prereq'=>$m['prereq']
+        //         'prereq'=>$m['prereq'],
+        //         'seo'=>$seo
         //     ]);
+        // }
 
         // profileicons
         // $path = storage_path().'/json/profileicon.json';
@@ -113,11 +125,16 @@ class DatabaseSeeder extends Seeder
         // }
 
         //runes
+        // $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
+        // $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
+
         // $path = storage_path().'/json/rune.json';
 
         // $json = json_decode(file_get_contents($path),true);
 
         // foreach($json['data'] as $r){
+        //     $seo_uyumlu_link = str_replace($turkce, $duzgun, $r['name']);
+        //     $seo = str_slug($seo_uyumlu_link);
         //     $plaintext="";
 
         //     if(isset($r['plaintext'])){
@@ -129,24 +146,30 @@ class DatabaseSeeder extends Seeder
         //         'description'=>$r['description'],
         //         'plaintext'=>$plaintext,
         //         'tier'=>$r['rune']['tier'],
-        //         'image'=>$r['image']['full']
+        //         'image'=>$r['image']['full'],
+        //         'seo'=>$seo
         //     ]);
         // }
 
         //summoner spells
+        $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
+        $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
         $path = storage_path().'/json/summoner-rito.json';
 
         $json = json_decode(file_get_contents($path),true);
 
         foreach($json['data'] as $s){
-            
+            $seo_uyumlu_link = str_replace($turkce, $duzgun, $s['name']);
+            $seo = str_slug($seo_uyumlu_link);
+
             DB::table('summonerspells')->insert([
                 'name'=> $s['name'],
                 'spell_id'=>$s['id'],
                 'key'=>$s['key'],
                 'description'=>$s['description'],
                 'summonerlevel'=>$s['summonerLevel'],
-                'image'=>$s['key'].'.png'
+                'image'=>$s['key'].'.png',
+                'seo'=>$seo
             ]);
         }
     }

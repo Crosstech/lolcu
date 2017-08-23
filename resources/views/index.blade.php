@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@section('title')
-    Sihirdar Arama
-@endsection
+@section('keywords')
+<meta name="keywords" content="lol,canlı,maç,analiz,çar,canlı maç analizi,level,kaç k"/>
+<title>lolcü | Canlı Maç Analizi</title>
+@endsectionn
 
 @section('content')
 <div class="row" style="margin-top:15%;">
