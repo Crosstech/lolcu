@@ -67,21 +67,3 @@ tr.blueTeam {
 tr.redTeam {
     border-left: 5px solid #e74c3c;
 }
-
-.section-title{
-    margin: 20px 0;
-    font-size: 400;
-}
-
-#live-game-not-found p{
-    font-size: 24px;
-    text-align: center;
-}
-
-/* Media Queries */
-
-@media (max-width: 991px) {
-    .mbx-20{
-        margin-bottom: 20px;
-    }
-}

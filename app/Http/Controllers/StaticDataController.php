@@ -20,7 +20,6 @@ class StaticDataController extends Controller
             'champions'=>$champions
         ]);
     }
-
     public function get_all_items()
     {
         $items = Item::get();
@@ -28,7 +27,6 @@ class StaticDataController extends Controller
             'items'=>$items
         ]);
     }
-
     public function get_all_masteries()
     {
         $masteries = Mastery::get();
@@ -36,7 +34,6 @@ class StaticDataController extends Controller
             'masteries'=>$masteries
         ]);
     }
-
     public function get_all_profile_icons()
     {
         $profile_icons = ProfileIcon::get();
@@ -44,7 +41,6 @@ class StaticDataController extends Controller
             'profile_icons'=>$profile_icons
         ]);
     }
-
     public function get_all_runes()
     {
         $runes = Rune::get();
@@ -52,16 +48,15 @@ class StaticDataController extends Controller
             'runes'=>$runes
         ]);
     }
-
     public function get_all_summoner_spells()
     {
         $summoner_spells = SummonerSpell::get();
         return response()->json([
             'summoner_spells'=>$summoner_spells
-        ]);
+                    ]);
     }
 
-    public function get_all_static_data()
+   public function get_all_static_data()
     {
         $champions = Champion::get();
         $items = Item::get();

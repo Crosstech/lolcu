@@ -57,7 +57,6 @@
     <meta name="theme-color" content="#ffffff">
 
     <script>
-		window.Lolcu = <?= json_encode([ 'csrfToken' => csrf_token() ]); ?>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
                 (i[r].q = i[r].q || []).push(arguments)
@@ -69,6 +68,7 @@
         ga('send', 'pageview');
 
         console.log("Selam! Buraya bakıyorsan sen de bizdensin :) info@crosstech.com.tr adresine konusu `f12` olan ve kendinden bahseden bir mail atar mısın? Birlikte bir kahve içmek dileğiyle. Kendine iyi bak!")
+		window.Lolcu = <?= json_encode([ 'csrfToken' => csrf_token() ]); ?>
 	</script>
     @yield('scripts')
 </head>

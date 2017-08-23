@@ -426,9 +426,7 @@ class RiotApi {
 					$this->cache->put($url, $result, self::CACHE_LIFETIME_MINUTES * 60);
 				}
 			} else {
-
-				return null;
-				//throw new Exception(self::$errorCodes[$this->responseCode]);
+				throw new Exception(self::$errorCodes[$this->responseCode]);
 			}
 		}
 		if (self::DECODE_ENABLED) {

@@ -1,30 +1,13 @@
 app.controller('mainController', function($scope, $http) {
-    $scope.static = {
-        champions: [],
-        items: [],
-        masteries: [],
-        runes: [],
-        profile_icons: [],
-        summoner_spells: []
-    };
-
-    $scope.seed = function() {
-		$http.get('/api/v1/static_data').
-		then(function(data) {
-            console.log(data);
-		});
-    }
-    
-    $scope.seed();
+    console.log('Ready');
 });
 
-app.controller('liveController', function($scope, $http) {
+app.controller('matchController', function($scope, $http) {
 
     $scope.current_game = window.CURRENT_GAME;
+    $scope.masteries = window.MASTERIES;
+    $scope.leagues = window.LEAGUES;
+    $scope.images = window.IMAGES;
 
-    console.log($scope.current_game);
-});
-
-app.controller('recentController', function($scope, $http) {
-    console.log('Recent Games');
+    console.log($scope.images);
 });
