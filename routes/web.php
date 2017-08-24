@@ -13,8 +13,13 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/profil/{region}/{name}', [
-	'uses'=>'HomeController@profile_index',	
+// Route::get('/profil/{region}/{name}', [
+// 	'uses'=>'ProfileController@index',	
+// 	'as'=>'profile',
+// ]);
+
+Route::get('/profil/tr/{name}', [
+	'uses'=>'ProfileController@index',	
 	'as'=>'profile',
 ]);
 
@@ -105,11 +110,10 @@ Route::group(['prefix' => 'api/v1'], function () {
 		'uses' => 'StaticDataController@get_all_summoner_spells',
 		'as'   => 'sd.summoner_spells',
 	]);
-    
-
-    // Match Data
-
-    // Summoner Data
 });
 
-Route::post('/profile_get', 'HomeController@profile_get');
+Route::get('/not-found', function(){
+	return view('notfound');
+});
+
+Route::post('/profile_get', 'ProfileController@profile_get');

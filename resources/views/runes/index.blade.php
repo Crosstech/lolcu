@@ -1,10 +1,18 @@
-@extends('layouts.app') 
-@section('keywords')
-<meta name="keywords" content="lol,ad,ap,adc,sup,jung,mid,solo,tank,rün,rünler"/>
-<title>lolcü | rünler</title>
+@extends('layouts.app')
+ 
+@section('title')
+ Rünler
 @endsection
-@section('scripts') @endsection @section('content')
-<div class="container">
+
+@section('keywords')
+lol,ad,ap,adc,sup,jung,mid,solo,tank,rün,rünler
+@endsection
+
+@section('scripts') 
+
+@endsection 
+
+@section('content')
   @foreach($runes as $r)
   <div class="row">
     <a href="/runler/{{$r->seo}}">
@@ -17,5 +25,4 @@
     </a>
   </div>
   @endforeach
-</div>
 @endsection

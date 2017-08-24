@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="tr">
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="lolcu/img/favicon.ico">
@@ -17,13 +17,14 @@
     <meta name="twitter:image" content="" />
     <meta name="twitter:url" content="www.lolcu.com" />
     <meta name="twitter:card" content="" />
-    @yield('keywords')
+	<title>
+		@yield('title') | lolcü
+	</title>
+
+    <meta name="keywords" content="@yield('keywords')"/>
 
     <!-- CSRF Token -->
 	<meta content="{{ csrf_token() }}" name="csrf-token" />
-	<!--<title>
-		{{ config('app.name', 'Lolcu') }}
-	</title>-->
 
     <base href="/" />
 

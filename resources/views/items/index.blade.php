@@ -1,9 +1,18 @@
 @extends('layouts.app')
-@section('keywords')
-<meta name="keywords" content="lol,esyalar,esya,set,esya seti,"/>
+
+@section('title')
+ Eşyalar
 @endsection
-@section('scripts') @endsection @section('content')
-<div class="container">
+
+@section('keywords')
+lol,esyalar,esya,set,esya seti
+@endsection
+
+@section('scripts') 
+
+@endsection 
+
+@section('content')
   @foreach($items as $i)
   <div class="row">
     <a href="/esyalar/{{$i->seo}}">
@@ -16,5 +25,4 @@
     </a>
   </div>
   @endforeach
-</div>
 @endsection

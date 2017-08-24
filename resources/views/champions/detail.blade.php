@@ -1,10 +1,17 @@
 @extends('layouts.app') 
-@section('keywords')
-<meta name="keywords" content="lol,sampiyon,sihirdar,çar,{{$champion->name}},build,eşya,set, eşya seti,rün,dizilim,rün dizilimi,rünler"/>
-<title>lolcü | {{$champion->name}}</title>
+
+@section('title')
+ {{ $champion->name }}
 @endsection
-@section('scripts') @endsection @section('content')
-<div class="container">
+
+@section('keywords')
+lol,sampiyon,sihirdar,çar,{{$champion->name}},build,eşya,set, eşya seti,rün,dizilim,rün dizilimi,rünler
+@endsection
+
+@section('scripts') 
+@endsection 
+
+@section('content')
   <div class="row">
     <div class="col-md-2">
       <img src="/img/champion/{{$champion->image}}" alt="">
@@ -17,5 +24,4 @@
       <p>{{$champion->description}}</p>
     </div>
   </div>
-</div>
 @endsection

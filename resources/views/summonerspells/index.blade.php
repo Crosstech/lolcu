@@ -1,10 +1,18 @@
 @extends('layouts.app')
-@section('keywords')
-<meta name="keywords" content="lol,adc,sup,jung,mid,solo,tank,büyü,yetenek,sihirdar,büyüleri"/>
-<title>lolcü | Sihirdar Büyüleri</title>
+
+@section('title')
+ Sihirdar Büyüleri
 @endsection
- @section('scripts') @endsection @section('content')
-<div class="container">
+
+@section('keywords')
+lol,adc,sup,jung,mid,solo,tank,büyü,yetenek,sihirdar,büyüleri
+@endsection
+
+@section('scripts') 
+
+@endsection 
+
+@section('content')
   @foreach($spells as $s)
   <div class="row">
     <a href="/sihirdar-buyuleri/{{$s->seo}}">
@@ -17,5 +25,4 @@
     </a>
   </div>
   @endforeach
-</div>
 @endsection

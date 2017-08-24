@@ -1,9 +1,19 @@
 @extends('layouts.app')
-@section('keywords')
-<meta name="keywords" content="lol,şampiyonlar,şampiyon,kaç k"/>
-<title>lolcü | Şampiyonlar</title>
+
+@section('title')
+ Şampiyonlar
 @endsection
- @section('scripts') @endsection @section('content')
+
+@section('keywords')
+lol,şampiyonlar,şampiyon,kaç k
+@endsection
+
+@section('scripts') 
+
+@endsection 
+
+@section('content')
+
 <div class="container">
   @foreach($champions as $c)
   <div class="row">

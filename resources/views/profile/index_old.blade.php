@@ -15,12 +15,13 @@
 @endsection
 
 @section('content')
-<div ng-controller="matchController">
-    <section id="summoner-info" class="jumbotron text-center">
+<section id="summoner-info" class="jumbotron text-center">
     <h1>{{ $summoner['name'] }}</h1>
     <h2>Seviye {{ $summoner['summonerLevel'] }}</h2>
 </section>
+
 @if ($current_game != null)
+
 <section id="live-game" ng-controller="liveController">
     <div class="row">
         <div class="col-xs-12">
@@ -34,17 +35,17 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Sihirdar</th>
+                        <th colspan="4">Sihirdar</th>
                         <th>Ligi</th>
                         <th>Şampiyon</th>
                         <th>Yetkinlik Seviyesi</th>
-                        <!--<th>Runler</th>
-                        <th>Kabiliyetler</th>-->
-                    </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="p in current_game.participants track by $index" 
                         ng-class="{ blueTeam : p.teamId == 100, redTeam : p.teamId == 200 }">
+                        <td>
+                            
+                        </td>
                         <td>
                             <span ng-bind="p.summonerName"></span>
                         </td>
@@ -56,9 +57,7 @@
                                 <img ng-src="/img/champion/<%images[p.summonerId][0].image%>">
                            </a>
                          </td>
-                        <td ng-bind="masteries[p.summonerId]"></td>
-                        <!--<td>null</td>
-                        <td>null</td>-->
+                        <td ng-bind="masteries[p.summonerId] == null ? 'Yetkinlik Puanı Bulunamadı' : masteries[p.summonerId]"></td>
                     </tr>
                 </tbody>
             </table>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    Canlı Maç Analizi
+Sihirdar Bulunamadı
 @endsection
 
 @section('keywords')
@@ -12,6 +12,13 @@ lol,canlı,maç,analiz,çar,canlı maç analizi,level,kaç k
 <div class="row">
     <div class="col-xs-12 text-center">
         <h1>Sihirdar Ara</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12 text-center">
+        <div class="not-found">
+            <p>Böyle bir sihirdar yok, emin misin? Bir daha ara!</p>
+        </div>
     </div>
 </div>
 <div class="row">

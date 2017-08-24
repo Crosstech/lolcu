@@ -67,3 +67,10 @@ tr.blueTeam {
 tr.redTeam {
     border-left: 5px solid #e74c3c;
 }
+
+.not-found{
+    background-color: #e74c3c;
+    padding: 15px;
+    margin-bottom: 25px;
+    color: #fff;
+}
