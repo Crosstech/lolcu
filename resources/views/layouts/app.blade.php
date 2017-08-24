@@ -120,6 +120,12 @@
                         <p>Sihirdar Büyüleri</p>
                     </a>
                 </li>
+                <li style="display:none">
+                    <a href="/sozluk">
+                        <i class="pe-7s-graph"></i>
+                        <p>Lol Sözlüğü</p>
+                    </a>
+                </li>
 
                 <li class="active-pro">
                     <a>

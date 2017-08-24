@@ -73,6 +73,11 @@ Route::get('/sihirdar-buyuleri/{name}',[
 	'as'=>'spells.get'
 ]);
 
+Route::get('/sozluk',[
+	'uses'=>'DictionaryController@get',
+	'as'=>'dictionary.get'
+]);
+
 Route::group(['prefix' => 'api/v1'], function () {
 
     // Static Data

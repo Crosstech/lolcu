@@ -152,25 +152,31 @@ class DatabaseSeeder extends Seeder
         // }
 
         //summoner spells
-        $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
-        $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
-        $path = storage_path().'/json/summoner-rito.json';
+        // $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
+        // $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
+        // $path = storage_path().'/json/summoner-rito.json';
 
-        $json = json_decode(file_get_contents($path),true);
+        // $json = json_decode(file_get_contents($path),true);
 
-        foreach($json['data'] as $s){
-            $seo_uyumlu_link = str_replace($turkce, $duzgun, $s['name']);
-            $seo = str_slug($seo_uyumlu_link);
+        // foreach($json['data'] as $s){
+        //     $seo_uyumlu_link = str_replace($turkce, $duzgun, $s['name']);
+        //     $seo = str_slug($seo_uyumlu_link);
 
-            DB::table('summonerspells')->insert([
-                'name'=> $s['name'],
-                'spell_id'=>$s['id'],
-                'key'=>$s['key'],
-                'description'=>$s['description'],
-                'summonerlevel'=>$s['summonerLevel'],
-                'image'=>$s['key'].'.png',
-                'seo'=>$seo
-            ]);
-        }
+        //     DB::table('summonerspells')->insert([
+        //         'name'=> $s['name'],
+        //         'spell_id'=>$s['id'],
+        //         'key'=>$s['key'],
+        //         'description'=>$s['description'],
+        //         'summonerlevel'=>$s['summonerLevel'],
+        //         'image'=>$s['key'].'.png',
+        //         'seo'=>$seo
+        //     ]);
+        // }
+
+        //dictionary
+        DB::table('dictionary')->insert([
+            'name'=>'GG',
+            'description'=>'Good Game. Genellikle kazanılan oyunlardan sonra takım arkadaşlarını tebrik için kullanılır.'
+        ]);
     }
 }
