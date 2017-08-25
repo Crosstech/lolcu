@@ -41,7 +41,7 @@ class RiotApi {
 	const API_URL_SUMMONER_3 = 'https://{platform}.api.riotgames.com/lol/summoner/v3/';
 
 
-	const API_KEY = 'RGAPI-2e66ea11-d0c0-4396-92b8-32433ff76933';
+	const API_KEY = 'RGAPI-49fd10bb-f7f9-4663-984d-5aca59b398fb';
 
 	// Rate limit for 10 minutes
 	const LONG_LIMIT_INTERVAL = 600;
@@ -125,6 +125,45 @@ class RiotApi {
 	public function getCurrentGame($id){
 		$call = self::API_URL_SPECTATOR_3 . 'active-games/by-summoner/' . $id;
 		return $this->request($call);
+	}
+
+	public function getParticipantDetails($participants) {
+		// 10 participants -> league position, champion mastery
+		/*
+			0 => array:10
+				"teamId" => 100
+				"spell1Id" => 3
+				"spell2Id" => 4
+				"championId" => 43
+				"profileIconId" => 3025
+				"summonerName" => "Refik Bey"
+				"bot" => false
+				"summonerId" => 13340126
+				"runes" => array:4 [▶]
+				"masteries" => array:10 [▶]
+			]
+		*/
+
+		$calls = [];
+
+		foreach($participants as $p){
+			$calls['league_' . $p['summonerId']] = self::API_URL_LEAGUE_3 . 'positions/by-summoner/' . $p['summonerId'];
+			$calls['champion_mastery_' . $p['summonerId']] = 
+				self::API_URL_CHAMPION_MASTERY_3 . 'champion-masteries/by-summoner/' . $p['summonerId'] . "/by-champion/" . $p['championId'];
+		}
+
+		//dd($calls);
+
+		$data = $this->requestMultiple($calls);
+
+		//dd($data);
+
+		foreach($participants as &$p){
+			$p['league'] = $data['league_' . $p['summonerId']];
+			$p['championMastery'] = $data['champion_mastery_' . $p['summonerId']];
+		}
+
+		return $participants;
 	}
 
 	//performs a static call. Not counted in rate limit.

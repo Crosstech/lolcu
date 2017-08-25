@@ -93,37 +93,37 @@
                         <p>Sihirdar Ara</p>
                     </a>
                 </li>
-                <li style="display:none">
+                <li>
                     <a href="/sampiyonlar">
                         <i class="pe-7s-graph"></i>
                         <p>Şampiyonlar</p>
                     </a>
                 </li>
-                <li style="display:none">
+                <li>
                     <a href="/esyalar">
                         <i class="pe-7s-graph"></i>
                         <p>Eşyalar</p>
                     </a>
                 </li>
-                <li style="display:none">
+                <li>
                     <a href="/kabiliyetler">
                         <i class="pe-7s-graph"></i>
                         <p>Kabiliyetler</p>
                     </a>
                 </li>
-                <li style="display:none">
+                <li>
                     <a href="/runler">
                         <i class="pe-7s-graph"></i>
                         <p>Rünler</p>
                     </a>
                 </li>
-                <li style="display:none">
+                <li>
                     <a href="/sihirdar-buyuleri">
                         <i class="pe-7s-graph"></i>
                         <p>Sihirdar Büyüleri</p>
                     </a>
                 </li>
-                <li style="display:none">
+                <li>
                     <a href="/sozluk">
                         <i class="pe-7s-graph"></i>
                         <p>Lol Sözlüğü</p>

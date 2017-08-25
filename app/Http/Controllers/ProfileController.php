@@ -14,13 +14,17 @@ class ProfileController extends Controller
     {
         $api = new RiotApi('tr1', new FileSystemCache(storage_path() . '/cache'));
         
-        // Get Summonner
         $summoner = $api->getSummonerByName($name);
+
+        $game = $api->getCurrentGame($summoner['id']);
+        $game["participants"] = $api->getParticipantDetails($game['participants']);
+
+        // dd($game);
 
         // Check Summoner Exists
         if($summoner != null)
         {
-            return view('profile.index', compact('summoner'));
+            return view('profile.index', compact('summoner', 'game'));
         }
         else
         {
