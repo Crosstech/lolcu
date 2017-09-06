@@ -6,10 +6,8 @@
 
 @section('scripts')
 <script>
-    window.LEAGUES = <?= json_encode($leagues)?>;
-    window.CURRENT_GAME = <?= json_encode($current_game); ?>;
-    window.MASTERIES = <?= json_encode($champion_masteries); ?>;
-    window.IMAGES = <?= json_encode($champion_images); ?>;
+    window.CURRENT_GAME = <?= json_encode($game); ?>;
+    window.CHAMPIONS = <?= json_encode($champions); ?>;
     
 </script>
 @endsection
@@ -20,7 +18,8 @@
     <h2>Seviye {{ $summoner['summonerLevel'] }}</h2>
 </section>
 
-@if ($current_game != null)
+@if ($game != null)
+
 
 <section id="live-game" ng-controller="liveController">
     <div class="row">
@@ -35,7 +34,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th colspan="4">Sihirdar</th>
+                        <th>Sihirdar</th>
                         <th>Ligi</th>
                         <th>Şampiyon</th>
                         <th>Yetkinlik Seviyesi</th>
@@ -44,20 +43,17 @@
                     <tr ng-repeat="p in current_game.participants track by $index" 
                         ng-class="{ blueTeam : p.teamId == 100, redTeam : p.teamId == 200 }">
                         <td>
-                            
-                        </td>
-                        <td>
                             <span ng-bind="p.summonerName"></span>
                         </td>
                         <td>
-                            <span ng-bind="leagues[p.summonerId]"></span>
+                            <span ng-bind="p.league[0].tier +' '+p.league[0].rank ">UNRANKED</span>
                         </td>
                         <td>
-                            <a ng-href="/sampiyonlar/<%images[p.summonerId][0].name%>">
-                                <img ng-src="/img/champion/<%images[p.summonerId][0].image%>">
+                            <a ng-href="/sampiyonlar/<%champions[p.summonerId]%>">
+                                <img ng-src="/img/champion/<%champions[p.summonerId].split(' ').join('')%>.png">
                            </a>
                          </td>
-                        <td ng-bind="masteries[p.summonerId] == null ? 'Yetkinlik Puanı Bulunamadı' : masteries[p.summonerId]"></td>
+                        <td ng-bind="p.championMastery['championPoints'] == null ? 'Yetkinlik Puanı Bulunamadı' : p.championMastery['championPoints']"></td>
                     </tr>
                 </tbody>
             </table>

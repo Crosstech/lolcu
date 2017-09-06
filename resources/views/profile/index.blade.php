@@ -20,8 +20,6 @@
             <h3 class="section-title">
                 CANLI MAÇ
             </h3>
-
-            {{ dump($game) }}
         </div>
     </div>
 </section>

@@ -83,6 +83,11 @@ Route::get('/sozluk',[
 	'as'=>'dictionary.get'
 ]);
 
+Route::get('/count',[
+	'uses'=>'ProfileController@get_count',
+	'as'=>'profile.get'
+]);
+
 Route::group(['prefix' => 'api/v1'], function () {
 
     // Static Data
@@ -112,8 +117,16 @@ Route::group(['prefix' => 'api/v1'], function () {
 	]);
 });
 
+Route::get('item-mapper',[
+	'uses'=>'AdminController@index',
+	'as'=>'admin.index'
+]);
+
 Route::get('/not-found', function(){
 	return view('notfound');
 });
 
 Route::post('/profile_get', 'ProfileController@profile_get');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

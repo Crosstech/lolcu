@@ -15,6 +15,7 @@ class ItemsController extends Controller
 
     public function get($seo){
         $item = Item::where('seo',$seo)->first();
-        return view('items.detail',compact('item'));
+        $champions = $item->champions;
+        return view('items.detail',compact('item','champions'));
     }
 }

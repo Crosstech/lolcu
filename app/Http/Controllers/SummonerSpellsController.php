@@ -14,6 +14,7 @@ class SummonerSpellsController extends Controller
 
     public function get($seo){
         $spell = SummonerSpell::where('seo',$seo)->first();
-        return view('summonerspells.detail',compact('spell'));
+        $champions= $spell->champions;
+        return view('summonerspells.detail',compact('spell','champions'));
     }
 }

@@ -41,7 +41,7 @@ class RiotApi {
 	const API_URL_SUMMONER_3 = 'https://{platform}.api.riotgames.com/lol/summoner/v3/';
 
 
-	const API_KEY = 'RGAPI-49fd10bb-f7f9-4663-984d-5aca59b398fb';
+	const API_KEY = 'RGAPI-a41e9087-af30-4bef-a95b-8ac99e39a04e';
 
 	// Rate limit for 10 minutes
 	const LONG_LIMIT_INTERVAL = 600;
@@ -52,7 +52,7 @@ class RiotApi {
 	const RATE_LIMIT_SHORT = 10;
 
 	// Cache variables
-	const CACHE_LIFETIME_MINUTES = 60;
+	const CACHE_LIFETIME_MINUTES = 10;
 	private $cache;
 
 	private $PLATFORM;	
@@ -152,11 +152,7 @@ class RiotApi {
 				self::API_URL_CHAMPION_MASTERY_3 . 'champion-masteries/by-summoner/' . $p['summonerId'] . "/by-champion/" . $p['championId'];
 		}
 
-		//dd($calls);
-
 		$data = $this->requestMultiple($calls);
-
-		//dd($data);
 
 		foreach($participants as &$p){
 			$p['league'] = $data['league_' . $p['summonerId']];

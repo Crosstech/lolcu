@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use RiotApi;
-
+use App\Models\Summoner;
 class DemoController extends Controller
 {
         public function index()
@@ -14,15 +14,18 @@ class DemoController extends Controller
 
     public function user_detail(Request $request)
     {
+        
         $api = new RiotApi($request->region);
 
-        
         $leagues = [];
         $champion_masteries =[];
         $champion_images =[];
 
+
+
+
         // Simple Api Usage
-        $summoner = $api->getSummonerByName($request->summoner_name);
+        $summoner = $api->getSummonerByName($summoner_name);
 
         $current_game = $api->getCurrentGame($summoner['id']);
 

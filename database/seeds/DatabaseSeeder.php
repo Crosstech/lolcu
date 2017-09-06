@@ -12,23 +12,38 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //champions
-        // $path = storage_path().'/json/champion.json';
+        // $path = storage_path().'/json/championFull.json';
 
         // $json = json_decode(file_get_contents($path),true);
 
+        // $at3 = '';
+        // $et3 = '';
         // foreach($json['data'] as $c)
         // {
+        //     if(!empty($c['allytips'][2])){
+        //         $at3 = $c['allytips'][2];
+        //     }
+        //     if(!empty($c['enemytips'][2])){
+        //         $et3 = $c['enemytips'][2];
+        //     }
+
         //     DB::table('champions')->insert([
         //         'name'=>$c['name'],
         //         'champion_id'=>$c['key'],
         //         'title'=>$c['title'],
-        //         'description'=>$c['blurb'],
+        //         'description'=>$c['lore'],
         //         'attack'=>$c['info']['attack'],
         //         'defense'=>$c['info']['defense'],
         //         'magic'=>$c['info']['magic'],
         //         'difficulty'=>$c['info']['difficulty'],
         //         'image'=>$c['image']['full'],
-        //         'partype'=>$c['partype']
+        //         'partype'=>$c['partype'],
+        //         'allytip1'=>$c['allytips'][0],
+        //         'allytip2'=>$c['allytips'][1],
+        //         'allytip3'=>$at3,
+        //         'enemytip1'=>$c['enemytips'][0],
+        //         'enemytip2'=>$c['enemytips'][1],
+        //         'enemytip3'=>$et3
         //     ]);
         // }
 
@@ -70,6 +85,7 @@ class DatabaseSeeder extends Seeder
         //         'seo'=>$seo
         //     ]);
         // }
+
         //mastery
         // $path = storage_path().'/json/mastery.json';
 
@@ -125,58 +141,58 @@ class DatabaseSeeder extends Seeder
         // }
 
         //runes
-        // $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
-        // $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
+    //     $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
+    //     $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
 
-        // $path = storage_path().'/json/rune.json';
+    //     $path = storage_path().'/json/rune.json';
 
-        // $json = json_decode(file_get_contents($path),true);
+    //     $json = json_decode(file_get_contents($path),true);
 
-        // foreach($json['data'] as $r){
-        //     $seo_uyumlu_link = str_replace($turkce, $duzgun, $r['name']);
-        //     $seo = str_slug($seo_uyumlu_link);
-        //     $plaintext="";
+    //     foreach($json['data'] as $r){
+    //         $seo_uyumlu_link = str_replace($turkce, $duzgun, $r['name']);
+    //         $seo = str_slug($seo_uyumlu_link);
+    //         $plaintext="";
 
-        //     if(isset($r['plaintext'])){
-        //         $plaintext=$r['plaintext'];
-        //     }
-        //     DB::table('runes')->insert([
-        //         'name'=>$r['name'],
-        //         'rune_id'=> explode(".",$r['image']['full'])[0],
-        //         'description'=>$r['description'],
-        //         'plaintext'=>$plaintext,
-        //         'tier'=>$r['rune']['tier'],
-        //         'image'=>$r['image']['full'],
-        //         'seo'=>$seo
-        //     ]);
-        // }
+    //         if(isset($r['plaintext'])){
+    //             $plaintext=$r['plaintext'];
+    //         }
+    //         DB::table('runes')->insert([
+    //             'name'=>$r['name'],
+    //             'rune_id'=> explode(".",$r['image']['full'])[0],
+    //             'description'=>$r['description'],
+    //             'plaintext'=>$plaintext,
+    //             'tier'=>$r['rune']['tier'],
+    //             'image'=>$r['image']['full'],
+    //             'seo'=>$seo
+    //         ]);
+    //     }
 
-        //summoner spells
-        // $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
-        // $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
-        // $path = storage_path().'/json/summoner-rito.json';
+    //     //summoner spells
+    //     $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
+    //     $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
+    //     $path = storage_path().'/json/summoner-rito.json';
 
-        // $json = json_decode(file_get_contents($path),true);
+    //     $json = json_decode(file_get_contents($path),true);
 
-        // foreach($json['data'] as $s){
-        //     $seo_uyumlu_link = str_replace($turkce, $duzgun, $s['name']);
-        //     $seo = str_slug($seo_uyumlu_link);
+    //     foreach($json['data'] as $s){
+    //         $seo_uyumlu_link = str_replace($turkce, $duzgun, $s['name']);
+    //         $seo = str_slug($seo_uyumlu_link);
 
-        //     DB::table('summonerspells')->insert([
-        //         'name'=> $s['name'],
-        //         'spell_id'=>$s['id'],
-        //         'key'=>$s['key'],
-        //         'description'=>$s['description'],
-        //         'summonerlevel'=>$s['summonerLevel'],
-        //         'image'=>$s['key'].'.png',
-        //         'seo'=>$seo
-        //     ]);
-        // }
+    //         DB::table('summonerspells')->insert([
+    //             'name'=> $s['name'],
+    //             'spell_id'=>$s['id'],
+    //             'key'=>$s['key'],
+    //             'description'=>$s['description'],
+    //             'summonerlevel'=>$s['summonerLevel'],
+    //             'image'=>$s['key'].'.png',
+    //             'seo'=>$seo
+    //         ]);
+    //     }
 
-        //dictionary
-        DB::table('dictionary')->insert([
-            'name'=>'GG',
-            'description'=>'Good Game. Genellikle kazanılan oyunlardan sonra takım arkadaşlarını tebrik için kullanılır.'
-        ]);
-    }
+    //     //dictionary
+    //     DB::table('dictionary')->insert([
+    //         'name'=>'GG',
+    //         'description'=>'Good Game. Genellikle kazanılan oyunlardan sonra takım arkadaşlarını tebrik için kullanılır.'
+    //     ]);
+     }
 }

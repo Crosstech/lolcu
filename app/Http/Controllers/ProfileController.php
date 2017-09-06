@@ -7,11 +7,17 @@ use Illuminate\Http\Request;
 use RiotApi;
 use FileSystemCache;
 use App\Models\Champion;
+use App\Models\Summoner;
 
 class ProfileController extends Controller
 {
     public function index($name)
-    {
+    {       
+        $champions ='';
+        $summoner = new Summoner();
+        $summoner->summoner_name = $name;
+        $summoner->save();
+
         $api = new RiotApi('tr1', new FileSystemCache(storage_path() . '/cache'));
         
         $summoner = $api->getSummonerByName($name);
@@ -21,10 +27,14 @@ class ProfileController extends Controller
 
         // dd($game);
 
+        foreach($game['participants'] as $p){
+            $c = Champion::where('champion_id',$p['championId'])->first()->name;
+            $champions[$p['summonerId']] = $c;
+        }
         // Check Summoner Exists
         if($summoner != null)
         {
-            return view('profile.index', compact('summoner', 'game'));
+            return view('profile.index_old', compact('summoner', 'game','champions'));
         }
         else
         {
@@ -40,6 +50,14 @@ class ProfileController extends Controller
     public function get_recent_games()
     {
         
+    }
+
+    public function get_count()
+    {
+        $query = Summoner::count();
+        return response()->json([
+            'query'=>$query
+        ]);
     }
 
     public function profile_get(Request $request)

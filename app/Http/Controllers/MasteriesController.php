@@ -14,6 +14,7 @@ class MasteriesController extends Controller
 
     public function get($seo){
         $mastery = Mastery::where('seo',$seo)->first();
-        return view('masteries.detail',compact('mastery'));
+        $champions= $mastery->champions;
+        return view('masteries.detail',compact('mastery','champions'));
     }
 }

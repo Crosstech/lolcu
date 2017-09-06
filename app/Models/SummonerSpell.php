@@ -19,4 +19,9 @@ class SummonerSpell extends Model
         'updated_at',
         'summoner_level'
     ];
+
+    public function champions()
+    {
+        return $this->belongsToMany('App\Models\Champion','champion_spells','spell_id','champion_id');
+    }
 }

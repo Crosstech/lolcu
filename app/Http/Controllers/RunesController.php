@@ -14,6 +14,7 @@ class RunesController extends Controller
 
     public function get($seo){
         $rune = Rune::where('seo',$seo)->first();
-        return view('runes.detail',compact('rune'));
+        $champions = $rune->champions;
+        return view('runes.detail',compact('rune','champions'));
     }
 }

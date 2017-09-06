@@ -12,7 +12,8 @@ class Item extends Model
         'name',
         'item_id',
         'image',
-        'plaintext'
+        'plaintext',
+        'champions'
     ];
 
     protected $hidden = [
@@ -21,4 +22,9 @@ class Item extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function champions()
+    {
+        return $this->belongsToMany('App\Models\Champion','champion_items','item_id','champion_id');
+    }
 }

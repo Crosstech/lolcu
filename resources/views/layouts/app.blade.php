@@ -30,11 +30,10 @@
 
     <link href="lolcu/css/bootstrap.min.css" rel="stylesheet" />
     <link href="lolcu/css/animate.min.css" rel="stylesheet"/>
-
+    <link href="lolcu/css/font-awesome.min" rel="stylesheet"/>
     <link href="lolcu/css/dashboard.css" rel="stylesheet"/>
 
     <link href="lolcu/css/custom.css" rel="stylesheet" />
-    <link rel="lolcu/css/listnav.css" href="stylesheet">
 
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
@@ -57,7 +56,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <script src="js/vendor/jquery-3.2.1.min.js" type="text/javascript"></script>
 
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -89,43 +87,43 @@
             <ul class="nav">
                 <li class="active">
                     <a href="/">
-                        <i class="pe-7s-graph"></i>
+                        <i class="fa fa-search" aria-hidden="true"></i>
                         <p>Sihirdar Ara</p>
                     </a>
                 </li>
                 <li>
                     <a href="/sampiyonlar">
-                        <i class="pe-7s-graph"></i>
+                        <i class="fa fa-magic" aria-hidden="true"></i>
                         <p>Şampiyonlar</p>
                     </a>
                 </li>
                 <li>
                     <a href="/esyalar">
-                        <i class="pe-7s-graph"></i>
+                        <i class="fa fa-shield" aria-hidden="true"></i>
                         <p>Eşyalar</p>
                     </a>
                 </li>
                 <li>
                     <a href="/kabiliyetler">
-                        <i class="pe-7s-graph"></i>
+                        <i class="fa fa-list-ul" aria-hidden="true"></i>
                         <p>Kabiliyetler</p>
                     </a>
                 </li>
                 <li>
                     <a href="/runler">
-                        <i class="pe-7s-graph"></i>
+                        <i class="fa fa-certificate" aria-hidden="true"></i>
                         <p>Rünler</p>
                     </a>
                 </li>
                 <li>
                     <a href="/sihirdar-buyuleri">
-                        <i class="pe-7s-graph"></i>
+                        <i class="fa fa-bullseye" aria-hidden="true"></i>
                         <p>Sihirdar Büyüleri</p>
                     </a>
                 </li>
                 <li>
                     <a href="/sozluk">
-                        <i class="pe-7s-graph"></i>
+                        <i class="fa fa-book" aria-hidden="true"></i>
                         <p>Lol Sözlüğü</p>
                     </a>
                 </li>
@@ -167,6 +165,7 @@
 
 </body>
 
+    <script src="js/vendor/jquery-3.2.1.min.js" type="text/javascript"></script>
 	<script src="lolcu/js/bootstrap.min.js" type="text/javascript"></script>
     
     <!-- Angular JS -->
