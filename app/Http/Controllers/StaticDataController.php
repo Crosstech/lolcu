@@ -20,6 +20,14 @@ class StaticDataController extends Controller
             'champions'=>$champions
         ]);
     }
+    public function get_champion(Request $request)
+    {
+        $champion = Champion::where('name',$request->name)->first();   
+        return response()->json([
+            'champions'=>$champion
+        ]);
+    }
+
     public function get_all_items()
     {
         $items = Item::get();

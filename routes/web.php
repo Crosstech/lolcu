@@ -95,6 +95,12 @@ Route::group(['prefix' => 'api/v1'], function () {
 		'uses' => 'StaticDataController@get_all_champions',
 		'as'   => 'sd.champions',
 	]);
+
+	 Route::get('/champion/', [
+		'uses' => 'StaticDataController@get_champion',
+		'as'   => 'sd.champion',
+	]);
+
     Route::get('/items', [
 		'uses' => 'StaticDataController@get_all_items',
 		'as'   => 'sd.items',

@@ -2,6 +2,6 @@
 
 @section('content')
 <section id="item-mapper" ng-controller="itemMapperController">
-   zaa
-   </section>
+     
+</section>
 @endsection

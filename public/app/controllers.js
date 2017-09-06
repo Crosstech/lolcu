@@ -21,5 +21,19 @@ app.controller('recentController', function($scope, $http) {
 });
 
 app.controller('itemMapperController',function($scope,$http){
-    console.log('items');
+
+    $http({
+        url:'/api/v1/champion/',
+        method:"GET",
+        params:{name:'Jinx'}
+    }).then(function(response){
+        console.log(response);
+    });
+
+    $http({
+        url:'/api/v1/items',
+        method:"GET"
+    }).then(function(response){
+        $scope.items = response;
+    });
 })
