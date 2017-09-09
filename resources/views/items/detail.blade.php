@@ -5,7 +5,7 @@
 @endsection
  
 @section('keywords')
-lol,esya,{{$item->seo}},{{$item->name}},ad,ap,yetenek,atak,saldırı,gücü,hızı
+lol,esya,{!! $item->description !!},{{$item->seo}},{{$item->name}},ad,ap,yetenek,atak,saldırı,gücü,hızı
 @endsection
 
 @section('scripts') 

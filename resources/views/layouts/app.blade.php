@@ -96,6 +96,47 @@
                         <i class="fa fa-magic" aria-hidden="true"></i>
                         <p>Şampiyonlar</p>
                     </a>
+                    
+                </li>
+                <li>
+                    <a href="/tank-sampiyonlar">
+                        <i class="fa fa-magic" aria-hidden="true"></i>
+                        <p>Tank Şampiyonlar</p>
+                    </a>
+                </li>
+                <li>
+                <a href="/nisanci-sampiyonlar">
+                        <i class="fa fa-magic" aria-hidden="true"></i>
+                        <p>Nişancı Şampiyonlar</p>
+                    </a>
+                </li>
+                <li>
+                
+                <a href="/buyucu-sampiyonlar">
+                        <i class="fa fa-magic" aria-hidden="true"></i>
+                        <p>Büyücü Şampiyonlar</p>
+                    </a>
+                </li>
+                <li>
+                
+                <a href="/suikastci-sampiyonlar">
+                        <i class="fa fa-magic" aria-hidden="true"></i>
+                        <p>Suikastçi Şampiyonlar</p>
+                    </a>
+                </li>
+                <li>
+                
+                <a href="/destek-sampiyonlar">
+                        <i class="fa fa-magic" aria-hidden="true"></i>
+                        <p>Destek Şampiyonlar</p>
+                    </a>
+                </li>
+                <li>
+                
+                <a href="/savasci-sampiyonlar">
+                        <i class="fa fa-magic" aria-hidden="true"></i>
+                        <p>Savaşçı Şampiyonlar</p>
+                    </a>
                 </li>
                 <li>
                     <a href="/esyalar">

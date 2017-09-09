@@ -30,6 +30,7 @@ class ChampionsController extends Controller
                 $counters[] = Champion::find($c->counter_id);
             }
         }
+
         return view('champions.detail',compact('champion','items','runes','masteries','spells','comments','counters'));
     }
 
@@ -48,5 +49,44 @@ class ChampionsController extends Controller
             'comment'=>$comment
         ]);
 
+    }
+
+    public function get_champions_by_type($type)
+    {
+        $role = '';
+        switch ($type) {
+            case 'tank':
+                $role = 'Tank';
+                $type = 'Tank';
+                break;
+            case 'nisanci':
+                $role = 'Marksman';
+                $type = 'Nişancı';
+                break;
+            case 'buyucu':
+                $role = 'Mage';
+                $type = 'Büyücü';
+                break;
+            case 'destek':
+                $role = 'Support';            
+                $type = 'Destek';
+                break;
+            case 'savasci':
+                $role = 'Fighter';
+                $type = 'Dövüşçü';
+                break;
+            case 'suikastci':
+                $role = 'Assassin';
+                $type = 'Suikastçi';
+                break;
+            
+            default:
+                $role = '';
+                break;
+        }
+        
+        $champions = Champion::where('tag1',$role)->orWhere('tag2',$role)->get();
+        
+        return view('champions.types',compact('champions','type'));
     }
 }

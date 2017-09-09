@@ -88,6 +88,11 @@ Route::get('/count',[
 	'as'=>'profile.get'
 ]);
 
+Route::get('/{type}-sampiyonlar',[
+	'uses'=>'ChampionsController@get_champions_by_type',
+	'as'=>'champions.by_type'
+]);
+
 Route::group(['prefix' => 'api/v1'], function () {
 
     // Static Data
