@@ -20,14 +20,25 @@ class StaticDataController extends Controller
             'champions'=>$champions
         ]);
     }
+
     public function get_champion(Request $request)
     {
         $champion = Champion::where('name',$request->name)->first();   
         return response()->json([
-            'champions'=>$champion
+            'champion_id'=>$champion->id,
+            'image'=>$champion->image,
+            'name'=>$champion->name
         ]);
     }
 
+    public function get_champion_comments(Request $request)
+    {
+        $champion = Champion::where('name',$request->champion_name)->first();   
+        return response()->json([
+            'comments'=>$champion->comments
+        ]);
+    }
+    
     public function get_all_items()
     {
         $items = Item::get();
@@ -35,6 +46,35 @@ class StaticDataController extends Controller
             'items'=>$items
         ]);
     }
+
+    public function get_item(Request $request)
+    {
+        $item = Item::where('name',$request->name)->first();
+        return response()->json([
+            'item_id'=>$item->id,
+            'image'=>$item->image,
+            'name'=>$item->name
+        ]);
+    }
+
+    public function get_item_tip(Request $request)
+    {
+        $item = Item::find($request->item_id);
+        $tips = $item->itemTips;
+        return response()->json([
+            'itemTips' => $tips
+        ]);
+
+    }
+
+    public function get_item_comments(Request $request)
+    {
+        $item = Item::where('name',$request->item_name)->first();
+        return response()->json([
+            'comments'=>$item->comments
+        ]);
+    }
+
     public function get_all_masteries()
     {
         $masteries = Mastery::get();
@@ -42,6 +82,15 @@ class StaticDataController extends Controller
             'masteries'=>$masteries
         ]);
     }
+
+    public function get_mastery_comments(Request $request)
+    {
+        $mastery = Mastery::where('name',$request->mastery_name)->first();
+        return response()->json([
+            'comments'=>$mastery->comments
+        ]);
+    }
+
     public function get_all_profile_icons()
     {
         $profile_icons = ProfileIcon::get();
@@ -49,6 +98,7 @@ class StaticDataController extends Controller
             'profile_icons'=>$profile_icons
         ]);
     }
+
     public function get_all_runes()
     {
         $runes = Rune::get();
@@ -56,12 +106,27 @@ class StaticDataController extends Controller
             'runes'=>$runes
         ]);
     }
+
+    public function get_rune_comments(Request$request){
+        $rune = Rune::where('name',$request->rune_name)->first();
+        return response()->json([
+            'comments'=>$rune->comments
+        ]);
+    }
+
     public function get_all_summoner_spells()
     {
         $summoner_spells = SummonerSpell::get();
         return response()->json([
             'summoner_spells'=>$summoner_spells
                     ]);
+    }
+
+    public function get_spell_comments(Request$request){
+        $spell = SummonerSpell::where('name',$request->spell_name)->first();
+        return response()->json([
+            'comments'=>$spell->comments
+        ]);
     }
 
    public function get_all_static_data()

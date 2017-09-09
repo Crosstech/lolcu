@@ -128,6 +128,45 @@
                     </a>
                 </li>
 
+                @if(Auth::check())
+                 <li>
+                    <a href="/counter-mapper">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Sampiyon Counterlari</p>
+                    </a>
+                </li>
+                 <li>
+                    <a href="/item-mapper">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Sampiyon-Esya</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/rune-mapper">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Sampiyon-Run</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/spell-mapper">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Sampiyon-Buyu</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/mastery-mapper">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Sampyion-Kabiliyet</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/itemTip-mapper">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Esya Ipuclari</p>
+                    </a>
+                </li>
+                @endif
+
                 <li class="active-pro">
                     <a>
                         <p class="copyright">
@@ -163,19 +202,21 @@
     </div>
 </div>
 
+
+
+<script src="js/vendor/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="lolcu/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Angular JS --> 
+<script src="js/vendor/angular.min.js" type="text/javascript"></script>
+<script src="js/vendor/angular-ui-router.min.js" type="text/javascript"></script>
+
+<!-- App -->
+<script src="app/module.js"></script>
+<script src="app/controllers.js"></script>
+
+<script src="lolcu/js/dashboard.js"></script>
+<script src="lolcu/js/main.js"></script>
+
 </body>
-
-    <script src="js/vendor/jquery-3.2.1.min.js" type="text/javascript"></script>
-	<script src="lolcu/js/bootstrap.min.js" type="text/javascript"></script>
-    
-    <!-- Angular JS -->
-    <script src="js/vendor/angular.min.js" type="text/javascript"></script>
-    <script src="js/vendor/angular-ui-router.min.js" type="text/javascript"></script>
-    
-    <!-- App -->
-    <script src="app/module.js"></script>
-    <script src="app/controllers.js"></script>
-
-	<script src="lolcu/js/dashboard.js"></script>
-    <script src="lolcu/js/main.js"></script>
 </html>

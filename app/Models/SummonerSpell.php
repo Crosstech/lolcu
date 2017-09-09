@@ -24,4 +24,9 @@ class SummonerSpell extends Model
     {
         return $this->belongsToMany('App\Models\Champion','champion_spells','spell_id','champion_id');
     }
+
+    public function comments()
+   {
+       return $this->belongsToMany('App\Models\Comment','summonerSpell_comments','spell_id','comment_id');
+   }
 }

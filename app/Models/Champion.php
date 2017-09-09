@@ -47,4 +47,14 @@ class Champion extends Model
    {
        return $this->belongsToMany('App\Models\Mastery','champion_masteries','champion_id','mastery_id');
    }
+
+   public function comments()
+   {
+       return $this->belongsToMany('App\Models\Comment','champion_comments','champion_id','comment_id');
+   }
+
+   public function counters()
+   {
+       return $this->hasMany('App\Models\Counter');
+   }
 }

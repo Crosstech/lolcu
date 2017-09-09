@@ -9,7 +9,9 @@ lol,{{$spell->name}},{{$spell->seo}},adc,sup,jung,mid,solo,tank,büyü,sihirdar,
 @endsection
 
 @section('scripts') 
-
+<script>
+    window.spell = <?= json_encode($spell->name); ?>;    
+</script>
 @endsection 
 
 @section('content')
@@ -36,4 +38,21 @@ lol,{{$spell->name}},{{$spell->seo}},adc,sup,jung,mid,solo,tank,büyü,sihirdar,
           @endforeach
         </div>
       @endforeach
+
+<h2>{{$spell->name}} için yapılmış yorumlar </h2>
+    <div class="row" ng-controller="spellCommentsController">
+      <div class="col-md-6">
+        <div class="comment" ng-repeat = "comment in comments">
+          <p><% comment.comment %></p>
+          <span><% comment.name %> - <% comment.summoner_name %></span>
+          <hr>
+        </div>
+      </div>
+      <div class="col-md-6">        
+        <input type="text" placeholder="Adin(Istege bagli)" ng-model="name">
+        <input type="text" placeholder="Sihirdar Adin (Istege bagli)" ng-model="summoner_name">
+        <textarea name="comment" id="" ng-model="comment" placeholder="Yorumunu yaz." cols="30" rows="10"></textarea>
+        <button ng-click="saveComment()">Yorum Yap</button>
+    </div>
+  </div>
 @endsection

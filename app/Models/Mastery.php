@@ -23,4 +23,15 @@ class Mastery extends Model
         'prereq',
         'ranks',
     ];
+
+
+    public function champions()
+    {
+        return $this->belongsToMany('App\Models\Champion','champion_masteries','mastery_id','champion_id');
+    }
+
+    public function comments()
+   {
+       return $this->belongsToMany('App\Models\Comment','mastery_comments','mastery_id','comment_id');
+   }
 }

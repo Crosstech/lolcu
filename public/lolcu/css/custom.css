@@ -45,7 +45,7 @@
     margin-bottom: 30px
 }
 .sidebar .nav > li.active-pro{
-    position: absolute;
+    /*position: absolute;*/
     width: 100%;
     bottom: 10px;
 }
@@ -73,4 +73,9 @@ tr.redTeam {
     padding: 15px;
     margin-bottom: 25px;
     color: #fff;
+}
+
+.search-box{
+    margin-left: 15px;
+    margin-bottom: 20px;
 }

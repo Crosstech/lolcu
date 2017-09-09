@@ -13,16 +13,19 @@ lol,adc,sup,jung,mid,solo,tank,büyü,yetenek,sihirdar,büyüleri
 @endsection 
 
 @section('content')
-  @foreach($spells as $s)
-  <div class="row">
-    <a href="/sihirdar-buyuleri/{{$s->seo}}">
-      <div class="col-md-2">
+<div class="heading">
+  <h2 style="text-align:center" >SİHİRDAR BÜYÜLERİ </h2>
+</div
+@foreach($spells->chunk(4) as $chunk)
+<div class="row">
+@foreach($chunk as $s)
+    <div class="col-md-3">
+      <a href="/sihirdar-buyuleri/{{$s->seo}}">
         <img src="/img/spell/{{$s->image}}" alt="">
-      </div>
-      <div class="col-md-2">
         <p>{{$s->name}}</p>
-      </div>
-    </a>
-  </div>
+      </a>
+    </div>
   @endforeach
+</div>
+@endforeach
 @endsection

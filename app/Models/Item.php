@@ -27,4 +27,14 @@ class Item extends Model
     {
         return $this->belongsToMany('App\Models\Champion','champion_items','item_id','champion_id');
     }
+
+    public function itemTips()
+    {
+        return $this->hasMany('App\Models\ItemTip');
+    }
+
+    public function comments()
+   {
+       return $this->belongsToMany('App\Models\Comment','item_comments','item_id','comment_id');
+   }
 }

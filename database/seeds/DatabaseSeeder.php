@@ -18,13 +18,21 @@ class DatabaseSeeder extends Seeder
 
         // $at3 = '';
         // $et3 = '';
+        // $tag2= '';
         // foreach($json['data'] as $c)
         // {
+        //     $at3 = '';
+        //     $et3 = '';
+        //     $tag2= '';
+
         //     if(!empty($c['allytips'][2])){
         //         $at3 = $c['allytips'][2];
         //     }
         //     if(!empty($c['enemytips'][2])){
         //         $et3 = $c['enemytips'][2];
+        //     }
+        //     if(!empty($c['tags'][1])){
+        //         $tag2 = $c['tags'][1];
         //     }
 
         //     DB::table('champions')->insert([
@@ -43,7 +51,15 @@ class DatabaseSeeder extends Seeder
         //         'allytip3'=>$at3,
         //         'enemytip1'=>$c['enemytips'][0],
         //         'enemytip2'=>$c['enemytips'][1],
-        //         'enemytip3'=>$et3
+        //         'enemytip3'=>$et3,
+        //         'tag1'=>$c['tags'][0],
+        //         'hp'=>$c['stats']['hp'],
+        //         'mp'=>$c['stats']['mp'],
+        //         'move_speed'=>$c['stats']['movespeed'],
+        //         'armor'=>$c['stats']['armor'],
+        //         'spell_block'=>$c['stats']['spellblock'],
+        //         'attack_range'=>$c['stats']['attackrange'],
+        //         'attack_damage'=>$c['stats']['attackdamage']
         //     ]);
         // }
 

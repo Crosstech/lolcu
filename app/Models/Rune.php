@@ -26,4 +26,9 @@ class Rune extends Model
     {
         return $this->belongsToMany('App\Models\Champion','champion_runes','rune_id','champion_id');
     }
+
+    public function comments()
+    {
+       return $this->belongsToMany('App\Models\Comment','rune_comments','rune_id','comment_id');
+    }
 }
