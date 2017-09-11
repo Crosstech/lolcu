@@ -31,6 +31,13 @@ class StaticDataController extends Controller
         ]);
     }
 
+
+    public function get_champion_by_id($id)
+    {
+        $champion = Champion::where('champion_id',$id)->first(['name','image']);
+        return $champion;
+    }
+
     public function get_champion_comments(Request $request)
     {
         $champion = Champion::where('name',$request->champion_name)->first();   

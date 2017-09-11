@@ -15,7 +15,7 @@ lol,kabiliyetler,ad,ap,tank,ormancı,jungle,mid,adc,sup,solo
 @section('content')
 <div class="heading">
   <h2 style="text-align:center" >KABİLİYETLER </h2>
-</div
+</div>
 @foreach($masteries->chunk(4) as $chunk)
 <div class="row">
 @foreach($chunk as $m)

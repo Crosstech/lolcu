@@ -99,6 +99,13 @@
                     
                 </li>
                 <li>
+                    <a href="/sampiyon-rotasyonu">
+                        <i class="fa fa-magic" aria-hidden="true"></i>
+                        <p>Ücretsiz Şampiyon Rotasyonu</p>
+                    </a>
+                    
+                </li>
+                <li>
                     <a href="/tank-sampiyonlar">
                         <i class="fa fa-magic" aria-hidden="true"></i>
                         <p>Tank Şampiyonlar</p>

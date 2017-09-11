@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Champion;
 use App\Models\Comment;
+use RiotApi;
+use FileSystemCache;
 
 class ChampionsController extends Controller
 {
@@ -88,5 +90,18 @@ class ChampionsController extends Controller
         $champions = Champion::where('tag1',$role)->orWhere('tag2',$role)->get();
         
         return view('champions.types',compact('champions','type'));
+    }
+
+    public function free()
+    {
+        $api = new RiotApi('tr1', new FileSystemCache(storage_path() . '/cache'));
+        $free_champions = [];
+
+        $frees = $api->getChampion(true);
+        foreach($frees['champions'] as $free){
+            $free_champions[]= app('App\Http\Controllers\StaticDataController')->get_champion_by_id($free['id']);
+        }
+
+        return view('champions.free',compact('free_champions'));
     }
 }

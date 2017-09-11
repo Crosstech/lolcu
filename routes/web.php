@@ -93,6 +93,11 @@ Route::get('/{type}-sampiyonlar',[
 	'as'=>'champions.by_type'
 ]);
 
+Route::get('/sampiyon-rotasyonu',[
+	'uses'=>'ChampionsController@free',
+	'as'=>'champions.free'
+]);
+
 Route::group(['prefix' => 'api/v1'], function () {
 
     // Static Data
