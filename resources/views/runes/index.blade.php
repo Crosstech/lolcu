@@ -15,22 +15,38 @@ lol,ad,ap,adc,sup,jung,mid,solo,tank,rün,rünler
 @endsection 
 
 @section('content')
-<div class="heading">
-  <h2 style="text-align:center" >RÜNLER</h2>
-</div>
-<div class="row" ng-controller="runesController">
-  <div class="search-box">
-    <label for="searchbox">RÜN ARAMA</label>
-    <input id="searchbox" class="search-box" type="text" placeholder="Rün Ara" ng-model="runeName">
-  </div>
-  <div ng-repeat="rune in allRunes | filter:runeName">
-    <div class="clearfix" ng-if="$index % 6 == 0"></div>
-    <div class="col-md-2">
-      <a href="/runler/<% rune.seo %>">
-        <img src="/img/rune/<% rune.image %>" alt="<% rune.image %>">
-        <p><% rune.name %></p>
-      </a>
+<section id="runes">
+<!-- <div class="title">
+  <h1>RÜNLER</h1>
+</div> -->
+<div class="body">
+  <div class="row" ng-controller="runesController">
+    <div class="col-md-3 stickit filtering">
+        <div class="row search">
+          <div class="col-md-12">
+            <input id="search" class="form-control" type="text" placeholder="Ara" ng-model="runeName">           
+          </div>
+        </div>
+    </div>
+    <div class="col-md-9 item-list">
+        <div class="row">
+          <div class="col-md-12" ng-if="(allRunes|filter:runeName).length == 0">
+            <p class="not-found">Böyle bir rün mevcut değil !</p>
+          </div>
+          
+          <div ng-repeat="rune in allRunes | filter:runeName">
+            <div class="clearfix" ng-if="$index % 6 == 0"></div>
+            <div class="col-md-2">
+              <a href="/runler/<% rune.seo %>" class="rune-item">
+                <img ng-src="/img/rune/<% rune.image %>" alt="<% rune.name %>" class="image">
+                <p ng-bind="rune.name" class="name"></p>
+              </a>
+            </div>
+          </div>
+        </div>
     </div>
   </div>
 </div>
+</section>
 @endsection
+

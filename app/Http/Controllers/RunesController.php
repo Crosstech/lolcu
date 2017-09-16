@@ -9,7 +9,7 @@ use App\Models\Comment;
 class RunesController extends Controller
 {
     public function all(){
-        $runes = Rune::get();
+        $runes = Rune::orderBy('name')->get();
         return view('runes.index', compact('runes'));
     }
 

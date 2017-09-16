@@ -15,22 +15,37 @@ lol,esyalar,esya,set,esya seti
 @endsection 
 
 @section('content')
-<div class="heading">
-  <h2 style="text-align:center" >EŞYALAR </h2>
-</div>
-<div class="row" ng-controller="itemsController">
-  <div class="search-box">
-    <label for="searchbox">EŞYA ARAMA</label>
-    <input id="searchbox" class="search-box" type="text" placeholder="Eşya Ara" ng-model="itemName">
-  </div>
-  <div ng-repeat="item in allItems | filter:itemName">
-    <div class="clearfix" ng-if="$index % 6 == 0"></div>
-    <div class="col-md-2">
-      <a href="/esyalar/<% item.seo %>">
-        <img src="/img/item/<% item.image %>" alt="<% item.image %>">
-        <p><% item.name %></p>
-      </a>
+<section id="items">
+  <!-- <div class="title">
+    <h1>EŞYALAR</h1>
+  </div> -->
+  <div class="body">
+    <div class="row" ng-controller="itemsController">
+      <div class="col-md-3 stickit filtering">
+          <div class="row search">
+            <div class="col-md-12">
+              <input id="search" class="form-control" type="text" placeholder="Ara" ng-model="itemName">           
+            </div>
+          </div>
+      </div>
+      <div class="col-md-9 item-list">
+          <div class="row">
+            <div class="col-md-12" ng-if="(allItems|filter:itemName).length == 0">
+              <p class="not-found">Böyle bir eşya mevcut değil !</p>
+            </div>
+            
+            <div ng-repeat="item in allItems | filter:itemName">
+              <div class="clearfix" ng-if="$index % 6 == 0"></div>
+              <div class="col-md-2">
+                <a href="/esyalar/<% item.seo %>" class="item-content" data-toggle="tooltip" data-placement="left" data-html="true" title="<% item.description %>">
+                  <img ng-src="/img/item/<% item.image %>" alt="<% item.image %>" class="image">
+                  <p ng-bind="item.name" class="name"></p>
+                </a>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 @endsection

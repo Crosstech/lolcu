@@ -12,20 +12,21 @@ class ChampionsController extends Controller
 {
     public function all(){
 
-        $champions = Champion::get();
+        $champions = Champion::orderBy('name')->get();
         return view('champions.index', compact('champions'));
     }
 
-    public function get($name){
+    public function get($seo){
         $counters=[];
 
-        $champion = Champion::where('name',$name)->first();
+        $champion = Champion::where('seo',$seo)->first();
+
         $items = $champion->items;
         $runes = $champion->runes;
         $spells = $champion->spells;
         $masteries = $champion->masteries;
         $comments= $champion->comments;
-        
+
         $counter_ids= $champion->counters;
         if(isset($counter_ids)){
             foreach($counter_ids as $c){
@@ -99,7 +100,7 @@ class ChampionsController extends Controller
 
         $frees = $api->getChampion(true);
         foreach($frees['champions'] as $free){
-            $free_champions[]= app('App\Http\Controllers\StaticDataController')->get_champion_by_id($free['id']);
+            $free_champions[]= Champion::where('champion_id',$free['id'])->first();
         }
 
         return view('champions.free',compact('free_champions'));

@@ -1,0 +1,382 @@
+/*
+    General
+*/
+div#preloader { position: fixed; left: 0; top: 0; z-index: 999; width: 100%; height: 100%; overflow: visible; background: #121212 url('http://vignette4.wikia.nocookie.net/leagueoflegends/images/e/e4/LoL_Facebook_Icon_14.gif/revision/latest?cb=20161029213743') no-repeat center center; }
+
+section .title{
+    text-align: center;
+    margin-bottom: 35px;
+}
+section  .title h1{
+    font-size: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0;
+}
+/*
+    Globals
+*/
+
+.search{
+    margin-bottom: 20px;
+}
+
+.search input{
+    height: 45px;
+    font-size: 18px;
+    border-radius: 0;
+    background-color: transparent;
+    border-color: #a9a9a9;
+    color: #a9a9a9;
+}
+
+.search input:focus{
+    background-color: transparent;
+    border-color: #a9a9a9;
+    color: #a9a9a9;
+}
+
+.stickit{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5px;
+}
+
+.filtering{
+    background: #121212;
+    background: -moz-linear-gradient(top, #121212 0%, #343434 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #121212), color-stop(100%, #343434));
+    background: -webkit-linear-gradient(top, #121212 0%, #343434 100%);
+    background: -o-linear-gradient(top, #121212 0%, #343434 100%);
+    background: -ms-linear-gradient(top, #121212 0%, #343434 100%);
+    background: linear-gradient(to bottom, #121212 0%, #343434 100%);
+    -webkit-box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    -moz-box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    padding: 25px;
+}
+
+.filtering label{
+    color: #c9aa71;
+}
+
+.tabs .nav{
+    float: right;
+    border: none;
+}
+
+.tabs .nav>li>a{
+    background-color: #121212;
+    color: #c9aa71;
+    font-size: 15px;
+    
+}
+
+.tabs .nav-tabs>li.active>a, 
+.tabs .nav-tabs>li.active>a:focus, 
+.tabs .nav-tabs>li.active>a:hover{
+    background-color: #f5f5f5;
+    color: #121212;
+    border-top: 4px solid #c9aa71;
+    margin-top: -4px;
+    -webkit-box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    -moz-box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    -webkit-transition: -webkit-box-shadow .25s;
+}
+
+.content .card{
+    color: #616161;
+    padding: 20px 30px;
+}
+
+.content h3{
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c9aa71;
+    color: #121212;
+}
+
+.content p{
+    font-size: 18px;
+}
+
+.content ul{
+    padding-left: 20px;
+}
+
+.content ul>li{
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.comment-item{
+    padding: 15px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #c9aa71;
+    -webkit-box-shadow: 0px 0px 15px -5px rgba(97,97,97,0.9);
+    -moz-box-shadow: 0px 0px 15px -5px rgba(97,97,97,0.9);
+    box-shadow: 0px 0px 15px -5px rgba(97,97,97,0.9);
+}
+
+.comment-item .body{
+    font-size: 20px !important;
+    font-style: italic;
+}
+
+.comment-item .author{
+    font-size: 16px;
+    text-align: right;
+}
+
+.btn-main{
+    background-color: #121212;
+    color: #c9aa71;
+    opacity: 1;
+    text-transform: uppercase;
+}
+.tooltip{ font-size: 13px; padding: 15px}
+.tooltip > .tooltip-inner {background-color: #121212;}
+.tooltip > .tooltip-arrow { border-bottom-color:#121212;}
+/*
+    Champions
+*/
+
+.champion-item{
+    position: relative;
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    -webkit-box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    -moz-box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    cursor: pointer;
+}
+
+.champion-item .image{
+    width: 100%;
+}
+
+.champion-item .name{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 3px 0;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(21, 32, 52, 0.2);
+    color: #fff;
+}
+
+.champion-not-found{
+    font-size: 24px;
+    margin-top: 50px;
+}
+
+/*
+    Champion Detail
+*/
+.champion-profile .header .cover{
+    position: relative;
+    background-size: 100% !important;
+    background-position: top center !important;
+    -webkit-box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    -moz-box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    box-shadow: 0px 10px 25px -5px rgba(97,97,97,0.9);
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    height: 0;
+    padding-top: 35%;
+}
+.champion-profile .header .cover .pp{
+    position: absolute;
+    bottom: -10px;
+    border: 5px solid #fff;
+    left: 25px;
+}
+
+.champion-profile .header .cover .pp img{
+    width: 150px;
+}
+
+.champion-profile .header .cover .name{
+    position: absolute;
+    bottom: 10px;
+    left: 250px;
+    color: #fff;
+}
+
+.champion-profile .header .cover .name h1{
+    font-weight: bold;
+}
+
+.champion-profile .tabs{
+    margin: 15px 0;
+}
+
+.champion-items .item-content,
+.champion-runes .rune-item,
+.champion-masteries .mastery-item,
+.champion-spells .spell-item{
+    box-shadow: none;
+}
+
+/*
+    Items & Runes & Masteries & Spells
+*/
+
+.item-content,
+.rune-item,
+.mastery-item,
+.spell-item{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    margin: 15px 0;
+    padding: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+    color: #121212;
+    border: 1px solid #e0e0e0;
+    -webkit-box-shadow: 0px 5px 15px -5px rgba(97,97,97,0.9);
+    -moz-box-shadow: 0px 5px 15px -5px rgba(97,97,97,0.9);
+    box-shadow: 0px 5px 15px -5px rgba(97,97,97,0.9);
+    -webkit-transition: -webkit-box-shadow .25s;
+    transition: -webkit-box-shadow .25s;
+    transition: box-shadow .25s;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+}
+
+.item-content .image,
+.rune-item .image,
+.mastery-item .image,
+.spell-item .image{
+    margin-bottom: 15px;
+}
+
+.item-content .name,
+.rune-item .name,
+.mastery-item .name,
+.spell-item .name{
+    font-size: 16px;
+    line-height: 1.1em;
+    height: 2.2em;
+}
+
+/*
+    Item Profile
+*/
+
+.item-profile .header{
+    padding: 10px 10px 20px 10px;
+}
+
+.item-profile .header .image{
+    float: left;
+    padding: 0;
+    margin: 0 10px 0 0;
+    -webkit-box-shadow: 0px 5px 15px -5px rgba(97,97,97,0.9);
+    -moz-box-shadow: 0px 5px 15px -5px rgba(97,97,97,0.9);
+    box-shadow: 0px 5px 15px -5px rgba(97,97,97,0.9);
+}
+
+.item-profile .header .description{
+    float: left;
+    width: 85%;    
+}
+
+.item-profile .description h1{
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.item-profile .description .price{
+    font-weight: bold;
+}
+
+.item-profile .description .price span{
+    color: #3498db;
+}
+
+.item-profile .description stats{
+    color: #e74c3c;
+}
+
+.item-profile .description unique,
+.item-profile .description active{
+    color: #c9aa71;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.item-profile .tabs{
+    margin: 15px 0;
+}
+
+/*
+    Dictionary
+*/
+
+.dictionary-item{
+    font-size: 24px !important;
+}
+
+.dictionary-item .key{
+    font-weight: 700;
+}
+
+/*
+    Helpers
+*/
+
+.pd0 {
+    padding: 0 !important;
+}
+
+.pdl0 {
+    padding-left: 0 !important;
+}
+
+.pdr0 {
+    padding-right: 0 !important;
+}
+
+.mr0 {
+    margin: 0 !important;
+}
+
+.mrl0 {
+    margin-left: 0 !important;
+}
+
+.mrr0 {
+    margin-right: 0 !important;
+}
+
+.mrb0 {
+    margin-bottom: 0 !important;
+}
+
+@media screen and (max-width: 991px) {
+    .tabs .nav{
+        padding-left:2px;
+        padding-right:2px;
+    }
+    .tabs .nav li {
+        display:block !important;
+        width:100%;
+        margin:2px 0;
+        text-align: center;
+    }
+}

@@ -18,12 +18,14 @@ lol,haftalık,ücretsiz,şampiyon,rotasyon
 </div>
 <div class="row">
     @foreach($free_champions as $f)
-    <div class="col-md-3">
-        <a href="/sampiyonlar/{{$f->name}}">
-        <img src="/img/champion/{{$f->image}}" alt="{{$f->name}} oynamak bu hafta ücretsiz!">
-        <span>{{$f->name}}</span>
+    @if($f != null)
+    <div class="col-md-2">
+        <a href="/sampiyonlar/{{$f->seo}}" class="champion-item">
+            <img src="/img/champion/{{$f->image}}" alt="{{$f->name}} oynamak bu hafta ücretsiz!" class="image">
+            <p class="name">{{$f->name}}</p>
         </a>
     </div>
+    @endif
     @endforeach
 </div>
 @endsection

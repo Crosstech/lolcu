@@ -41,7 +41,7 @@ class RiotApi {
 	const API_URL_SUMMONER_3 = 'https://{platform}.api.riotgames.com/lol/summoner/v3/';
 
 
-	const API_KEY = 'RGAPI-22371369-06bd-445d-b7d0-4875485b6f0c';
+	const API_KEY = 'RGAPI-0f526cfa-1455-41b0-a24a-d7ec409df940';
 
 	// Rate limit for 10 minutes
 	const LONG_LIMIT_INTERVAL = 600;
@@ -429,10 +429,7 @@ class RiotApi {
 	}
 
 	private function request($call, $static = false) {
-				//format the full URL
-				
 		$url = $this->format_url($call);
-		//echo $url;
 		//caching
 		if($this->cache !== null && $this->cache->has($url)){
 			$result = $this->cache->get($url);
@@ -455,13 +452,12 @@ class RiotApi {
 			$this->responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 			curl_close($ch);
 
-
 			if($this->responseCode == 200) {
 				if($this->cache !== null){
 					$this->cache->put($url, $result, self::CACHE_LIFETIME_MINUTES * 60);
 				}
 			} else {
-				//throw new Exception(self::$errorCodes[$this->responseCode]);
+				// throw new Exception(self::$errorCodes[$this->responseCode]);
 				return null;
 			}
 		}

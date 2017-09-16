@@ -15,51 +15,80 @@ lol,kabiliyet,{{$mastery->name}},{{$mastery->seo}}adc,solo,mid,sup,jung,ormanci,
 @endsection 
 
 @section('content')
-<div class="row">
-    <div class="col-md-2">
-      <img src="/img/mastery/{{$mastery->image}}" alt="">
-    </div>
-    <div class="col-md-2">
-      <p>{{$mastery->name}}</p>
-    </div>
-    <div class="col-md-8">
-      <p>{{$mastery->description1}}</p>
-      <p>{{$mastery->description2}}</p>
-      <p>{{$mastery->description3}}</p>
-      <p>{{$mastery->description4}}</p>
-      <p>{{$mastery->description5}}</p>
-    </div>
-</div>
-
-<h2>{{$mastery->name}} kullanan şampiyonlar</h2>
-@foreach($champions->chunk(4) as $chunk)
-        <div class="row">
-          @foreach($chunk as $c)
-          <div class="col-md-3">
-            <a href="/sampiyonlar/{{$c->name}}">
-              <img src="/img/champion/{{$c->image}}" alt="">
-              <p>{{$c->name}}</p>
-              <p>{{$c->title}}</p>
-            </a>
-          </div>
-          @endforeach
-        </div>
-      @endforeach
-
-<h2>{{$mastery->name}} için yapılmış yorumlar </h2>
-    <div class="row" ng-controller="masteryCommentsController">
-      <div class="col-md-6">
-        <div class="comment" ng-repeat = "comment in comments">
-          <p><% comment.comment %></p>
-          <span><% comment.name %> - <% comment.summoner_name %></span>
-          <hr>
-        </div>
+  <section id="{{ $mastery->seo }}-profile" class="item-profile">
+    <div class="header card clearfix">
+      <img src="/img/mastery/{{$mastery->image}}" alt="{{ $mastery->name }}" class="image">
+      <div class="description">
+          <h1>{{$mastery->name}}</h1>
+          <p>{{$mastery->description1}}</p>
+          <p>{{$mastery->description2}}</p>
+          <p>{{$mastery->description3}}</p>
+          <p>{{$mastery->description4}}</p>
+          <p>{{$mastery->description5}}</p>
       </div>
-      <div class="col-md-6">        
-        <input type="text" placeholder="Adin(Istege bagli)" ng-model="name">
-        <input type="text" placeholder="Sihirdar Adin (Istege bagli)" ng-model="summoner_name">
-        <textarea name="comment" id="" ng-model="comment" placeholder="Yorumunu yaz." cols="30" rows="10"></textarea>
-        <button ng-click="saveComment()">Yorum Yap</button>
     </div>
-  </div>
+    <div class="row tabs">
+      <div class="col-md-12">
+        <ul class="nav nav-tabs">
+          <li class="active"><a data-toggle="tab" href="#champions">{{$mastery->name}} Kullanan Şampiyonlar</a></li>
+          <li><a data-toggle="tab" href="#comments">{{$mastery->name}} Hakkında Yapılmış Yorumlar</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row content">
+      <div class="col-md-12">
+        <div class="tab-content card">
+            <div id="champions" class="tab-pane fade in active">
+            @if(!$champions->isEmpty())
+            @foreach($champions->chunk(6) as $chunk)
+              <div class="row item-champions">
+                @foreach($chunk as $c)
+                <div class="col-md-2">
+                  <a href="/sampiyonlar/{{$c->seo}}" class="champion-item">
+                    <img src="/img/champion/{{$c->image}}" alt="{{ $c->name }}" class="image">
+                    <p class="name">{{$c->name}}</p>
+                  </a>
+                </div>
+                @endforeach
+              </div>
+            @endforeach
+            @else
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="not-found">
+                    Şampiyon Bulunamadı.
+                  </p>
+                </div>
+              </div>
+            @endif
+            </div>
+            <div id="comments" class="tab-pane fade">
+              <div class="row item-comments" ng-controller="masteryCommentsController">
+                  <div class="col-md-9">
+                    <div class="comment-item" ng-repeat = "comment in comments">
+                      <p class="body" ng-bind="comment.comment"></p>
+                      <p class="author" ng-bind="comment.name - comment.summoner_name"></p>
+                    </div>
+                    <p ng-if="comments.length <=0" class="not-found">
+                      Yorum Bulunamadı.
+                    </p>
+                  </div>
+                  <div class="col-md-3">        
+                    <div class="form-group">
+                      <input type="text" placeholder="Adın(İsteğe Bağlı)" ng-model="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" placeholder="Sihirdar Adın (İsteğe Bağlı)" ng-model="summoner_name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                      <textarea name="comment" id="comment" ng-model="comment" placeholder="Yorumunu yaz." rows="5" class="form-control"></textarea>
+                    </div>
+                    <button ng-click="saveComment()" class="btn btn-main">Yorum Yap</button>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </section>
 @endsection

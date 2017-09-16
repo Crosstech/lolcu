@@ -13,22 +13,24 @@ lol,sampiyon,sihirdar,çar,{{$type}} şampiyonlar,{{$type}}
 @endsection
 
 @section('content')
-<div class="heading">
-  <h2 style="text-align:center" >{{$type}} Şampiyonlar </h2>
-</div>
-<div class="row">
-@foreach($champions->chunk(4) as $chunk)
-        <div class="row">
-          @foreach($chunk as $c)
-          <div class="col-md-3">
-            <a href="/sampiyonlar/{{$c->name}}">
-              <img src="/img/champion/{{$c->image}}" alt="">
-              <p>{{$c->name}}</p>
-            </a>
-          </div>
-          @endforeach
-        </div>
+<section id="{{$type}}-champions">
+  <div class="title">
+    <h1>{{ $type }} Şampiyonlar</h1>
+  </div>
+  <div class="body">
+  @foreach($champions->chunk(6) as $chunk)
+    <div class="row">
+      @foreach($chunk as $c)
+      <div class="col-md-2">
+        <a href="/sampiyonlar/{{ $c->seo }}" class="champion-item">
+          <img src="/img/champion/{{ $c->image }}" alt="{{ $c->name }}" class="image">
+          <p class="name">{{$c->name}}</p>
+        </a>
+      </div>
       @endforeach
-</div>
+    </div>
+  @endforeach
+  </div>
+</section>
  
 @endsection

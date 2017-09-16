@@ -13,7 +13,7 @@ class ProfileController extends Controller
 {
     public function index($name)
     {       
-        $champions ='';
+        $champions = [];
         $summoner = new Summoner();
         $summoner->summoner_name = $name;
         $summoner->save();
@@ -24,17 +24,16 @@ class ProfileController extends Controller
 
         $game = $api->getCurrentGame($summoner['id']);
         $game["participants"] = $api->getParticipantDetails($game['participants']);
-
-        // dd($game);
-
+ 
         foreach($game['participants'] as $p){
-            $c = Champion::where('champion_id',$p['championId'])->first()->name;
-            $champions[$p['summonerId']] = $c;
+            $c = Champion::where('champion_id',$p['championId'])->first();
+            $champions[$p['summonerId']] = $c->name;
         }
+
         // Check Summoner Exists
         if($summoner != null)
         {
-            return view('profile.index_old', compact('summoner', 'game','champions'));
+            return view('profile.index', compact('summoner', 'game','champions'));
         }
         else
         {

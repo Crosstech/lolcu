@@ -28,7 +28,7 @@ Route::get('/sampiyonlar',[
 	'as'=>'champs.all'
 ]);
 
-Route::get('/sampiyonlar/{name}',[
+Route::get('/sampiyonlar/{seo}',[
 	'uses'=>'ChampionsController@get',
 	'as'=>'champs.get'
 ]);

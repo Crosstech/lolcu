@@ -4,9 +4,11 @@
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/png" href="lolcu/img/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
+	<title>
+		@yield('title') | lolcü
+	</title>
     <meta name="description" content="Lolcu'ler! Lol ile alakalı herşeyi bulabileceğiniz oyuncu portalı burası. Vadi için en iyi ipuçlarını bulabilirsiniz. "/>
     <meta property="og:title" content="lolcu.com" />
     <meta property="og:image" content="" />
@@ -17,29 +19,23 @@
     <meta name="twitter:image" content="" />
     <meta name="twitter:url" content="www.lolcu.com" />
     <meta name="twitter:card" content="" />
-	<title>
-		@yield('title') | lolcü
-	</title>
-
     <meta name="keywords" content="@yield('keywords')"/>
-
     <!-- CSRF Token -->
 	<meta content="{{ csrf_token() }}" name="csrf-token" />
-
+    
     <base href="/" />
-
+    <link rel="canonical" href="http://lolcu.com">
+    
     <link href="lolcu/css/bootstrap.min.css" rel="stylesheet" />
     <link href="lolcu/css/animate.min.css" rel="stylesheet"/>
-    <link href="lolcu/css/font-awesome.min" rel="stylesheet"/>
     <link href="lolcu/css/dashboard.css" rel="stylesheet"/>
-
     <link href="lolcu/css/custom.css" rel="stylesheet" />
-
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="lolcu/css/pe-icon-7-stroke.css" rel="stylesheet" />
-    <link rel="canonical" href="http://lolcu.com">
-     <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
@@ -56,7 +52,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -64,17 +59,15 @@
             }, i[r].l = 1 * new Date(); a = s.createElement(o),
                 m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
         ga('create', 'UA-104331446-1', 'auto');
         ga('send', 'pageview');
-
         console.log("Selam! Buraya bakıyorsan sen de bizdensin :) info@crosstech.com.tr adresine konusu `f12` olan ve kendinden bahseden bir mail atar mısın? Birlikte bir kahve içmek dileğiyle. Kendine iyi bak!")
 		window.Lolcu = <?= json_encode([ 'csrfToken' => csrf_token() ]); ?>
 	</script>
     @yield('scripts')
 </head>
 <body>
-
+<div id="preloader"></div>
 <div class="wrapper">
     <div class="sidebar">
     	<div class="sidebar-wrapper">
@@ -83,7 +76,6 @@
                     Lolcu
                 </a>
             </div>
-
             <ul class="nav">
                 <li class="active">
                     <a href="/">
@@ -91,59 +83,51 @@
                         <p>Sihirdar Ara</p>
                     </a>
                 </li>
-                <li>
+                <li class="dropdown-sub">
                     <a href="/sampiyonlar">
-                        <i class="fa fa-magic" aria-hidden="true"></i>
-                        <p>Şampiyonlar</p>
+                        <i class="fa fa-magic"></i>  
+                        <p>
+                            Şampiyonlar
+                            <span class="caret"></span>
+                        </p>
                     </a>
-                    
-                </li>
-                <li>
-                    <a href="/sampiyon-rotasyonu">
-                        <i class="fa fa-magic" aria-hidden="true"></i>
-                        <p>Ücretsiz Şampiyon Rotasyonu</p>
-                    </a>
-                    
-                </li>
-                <li>
-                    <a href="/tank-sampiyonlar">
-                        <i class="fa fa-magic" aria-hidden="true"></i>
-                        <p>Tank Şampiyonlar</p>
-                    </a>
-                </li>
-                <li>
-                <a href="/nisanci-sampiyonlar">
-                        <i class="fa fa-magic" aria-hidden="true"></i>
-                        <p>Nişancı Şampiyonlar</p>
-                    </a>
-                </li>
-                <li>
-                
-                <a href="/buyucu-sampiyonlar">
-                        <i class="fa fa-magic" aria-hidden="true"></i>
-                        <p>Büyücü Şampiyonlar</p>
-                    </a>
-                </li>
-                <li>
-                
-                <a href="/suikastci-sampiyonlar">
-                        <i class="fa fa-magic" aria-hidden="true"></i>
-                        <p>Suikastçi Şampiyonlar</p>
-                    </a>
-                </li>
-                <li>
-                
-                <a href="/destek-sampiyonlar">
-                        <i class="fa fa-magic" aria-hidden="true"></i>
-                        <p>Destek Şampiyonlar</p>
-                    </a>
-                </li>
-                <li>
-                
-                <a href="/savasci-sampiyonlar">
-                        <i class="fa fa-magic" aria-hidden="true"></i>
-                        <p>Savaşçı Şampiyonlar</p>
-                    </a>
+                    <ul style="list-style: none; padding-left: 20px; display: none;">
+                        <li>
+                            <a href="/sampiyon-rotasyonu">
+                                <p class="mr0">Ücretsiz Şampiyon Rotasyonu</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/tank-sampiyonlar">
+                                <p class="mr0">Tank Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/nisanci-sampiyonlar">
+                                <p class="mr0">Nişancı Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/buyucu-sampiyonlar">
+                                <p class="mr0">Büyücü Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/suikastci-sampiyonlar">
+                                <p class="mr0">Suikastçi Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/destek-sampiyonlar">
+                                <p class="mr0">Destek Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/savasci-sampiyonlar">
+                                <p class="mr0">Savaşçı Şampiyonlar</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="/esyalar">
@@ -175,6 +159,7 @@
                         <p>Lol Sözlüğü</p>
                     </a>
                 </li>
+
 
                 @if(Auth::check())
                  <li>
@@ -214,7 +199,6 @@
                     </a>
                 </li>
                 @endif
-
                 <li class="active-pro">
                     <a>
                         <p class="copyright">
@@ -225,7 +209,6 @@
             </ul>
     	</div>
     </div>
-
     <div class="main-panel">
         <nav class="navbar navbar-default navbar-fixed hidden-md hidden-lg">
             <div class="container-fluid">
@@ -249,22 +232,15 @@
         </div>
     </div>
 </div>
-
-
-
 <script src="js/vendor/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="lolcu/js/bootstrap.min.js" type="text/javascript"></script>
-
 <!-- Angular JS --> 
 <script src="js/vendor/angular.min.js" type="text/javascript"></script>
 <script src="js/vendor/angular-ui-router.min.js" type="text/javascript"></script>
-
 <!-- App -->
 <script src="app/module.js"></script>
 <script src="app/controllers.js"></script>
-
 <script src="lolcu/js/dashboard.js"></script>
 <script src="lolcu/js/main.js"></script>
-
 </body>
 </html>

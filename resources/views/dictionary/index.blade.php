@@ -14,14 +14,19 @@ lol, sozluk, sözlük, ne demek, ne, demek
 
 @section('content')
 
-@foreach($items as $i)
-<div class="heading">
-  <h2 style="text-align:center" >SÖZLÜK </h2>
-</div
-<div class="row">
-  <div class="col-md-1">{{$i->name}}:</div>
-  <div class="col-md-9">{{$i->description}}</div>
-</div>
-@endforeach
-
+<section id="dictionary">
+  <div class="title">
+    <h1>SÖZLÜK</h1>
+  </div>
+  <div class="body content">
+    <ul>
+        @foreach($items as $i)
+        <li class="dictionary-item">
+          <span class="key">{{$i->name}}:</span>
+          <span class="value">{{$i->description}}</span>
+        </li>
+        @endforeach
+    </ul>
+  </div>
+</section>
 @endsection

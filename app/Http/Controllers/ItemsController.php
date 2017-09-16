@@ -10,7 +10,7 @@ class ItemsController extends Controller
 {
     public function all(){
 
-        $items = Item::get();
+        $items = Item::orderBy('name')->get();
         return view('items.index', compact('items'));
     }
 

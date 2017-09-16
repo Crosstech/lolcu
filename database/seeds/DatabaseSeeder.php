@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         //champions
         // $path = storage_path().'/json/championFull.json';
+        
+        // $turkce = array("ş", "Ş", "ı", "(", ")", "‘", "ü", "Ü", "ö", "Ö", "ç", "Ç", " ", "/", "*", "?", "ş", "Ş", "ı", "ğ", "Ğ", "İ", "ö", "Ö", "Ç", "ç", "ü", "Ü");
+        // $duzgun = array("s", "S", "i", "", "", "", "u", "U", "o", "O", "c", "C", "-", "-", "-", "", "s", "S", "i", "g", "G", "I", "o", "O", "C", "c", "u", "U");
 
         // $json = json_decode(file_get_contents($path),true);
 
@@ -21,6 +24,8 @@ class DatabaseSeeder extends Seeder
         // $tag2= '';
         // foreach($json['data'] as $c)
         // {
+        //     $seo_uyumlu_link = str_replace($turkce, $duzgun, $c['name']);
+        //     $seo = str_slug($seo_uyumlu_link);
         //     $at3 = '';
         //     $et3 = '';
         //     $tag2= '';
@@ -59,7 +64,8 @@ class DatabaseSeeder extends Seeder
         //         'armor'=>$c['stats']['armor'],
         //         'spell_block'=>$c['stats']['spellblock'],
         //         'attack_range'=>$c['stats']['attackrange'],
-        //         'attack_damage'=>$c['stats']['attackdamage']
+        //         'attack_damage'=>$c['stats']['attackdamage'],
+        //         'seo'=> $seo
         //     ]);
         // }
 

@@ -9,7 +9,7 @@ use App\Models\Comment;
 class MasteriesController extends Controller
 {
     public function all(){
-        $masteries = Mastery::get();
+        $masteries = Mastery::orderBy('name')->get();
         return view('masteries.index', compact('masteries'));
     }
 

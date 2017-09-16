@@ -13,19 +13,28 @@ lol,kabiliyetler,ad,ap,tank,ormancı,jungle,mid,adc,sup,solo
 @endsection 
 
 @section('content')
-<div class="heading">
-  <h2 style="text-align:center" >KABİLİYETLER </h2>
-</div>
-@foreach($masteries->chunk(4) as $chunk)
-<div class="row">
-@foreach($chunk as $m)
-    <div class="col-md-3">
-      <a href="/kabiliyetler/{{$m->seo}}">
-        <img src="/img/mastery/{{$m->image}}" alt="">
-        <p>{{$m->name}}</p>
-      </a>
+<section id="masteries">
+<!-- <div class="title">
+  <h1>KABİLİYETLER</h1>
+</div> -->
+
+<div class="body">
+  <div class="row">
+    <div class="col-md-12 mastery-list">
+    @foreach($masteries->chunk(6) as $chunk)
+    <div class="row">
+    @foreach($chunk as $m)
+        <div class="col-md-2">
+          <a href="/kabiliyetler/{{$m->seo}}" class="mastery-item">
+            <img src="/img/mastery/{{$m->image}}" alt="{{ $m->name }}" class="image">
+            <p class="name">{{$m->name}}</p>
+          </a>
+        </div>
+      @endforeach
     </div>
-  @endforeach
+    @endforeach
+    </div>
+  </div>
 </div>
-@endforeach
+</section>
 @endsection
