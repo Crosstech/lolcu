@@ -430,11 +430,11 @@ app.controller('championCommentsController', ['$scope', '$http', function ($scop
         }
     }).then(function (response) {
         $scope.comments = response.data.comments
-        console.log($scope.comments);
 
     });
 
     $scope.saveComment = function () {
+
         $http({
             url: '/champion/save-comment',
             method: "POST",
@@ -445,8 +445,7 @@ app.controller('championCommentsController', ['$scope', '$http', function ($scop
                 comment: $scope.comment
             }
         }).then(function (response) {
-            $scope.comments.push(response.data.comment);
-            console.log($scope.comments);
+            $scope.comments.unshift(response.data.comment);
             $scope.name = '';
             $scope.summoner_name = '';
             $scope.comment = '';
@@ -465,7 +464,6 @@ app.controller('itemCommentsController', ['$scope', '$http', function ($scope, $
         }
     }).then(function (response) {
         $scope.comments = response.data.comments
-        console.log($scope.comments);
 
     });
 
@@ -480,7 +478,7 @@ app.controller('itemCommentsController', ['$scope', '$http', function ($scope, $
                 comment: $scope.comment
             }
         }).then(function (response) {
-            $scope.comments.push(response.data.comment);
+            $scope.comments.unshift(response.data.comment);
             console.log($scope.comments);
             $scope.name = '';
             $scope.summoner_name = '';
@@ -500,7 +498,6 @@ app.controller('runeCommentsController', ['$scope', '$http', function ($scope, $
         }
     }).then(function (response) {
         $scope.comments = response.data.comments
-        console.log($scope.comments);
 
     });
 
@@ -515,8 +512,7 @@ app.controller('runeCommentsController', ['$scope', '$http', function ($scope, $
                 comment: $scope.comment
             }
         }).then(function (response) {
-            $scope.comments.push(response.data.comment);
-            console.log($scope.comments);
+            $scope.comments.unshift(response.data.comment);
             $scope.name = '';
             $scope.summoner_name = '';
             $scope.comment = '';
@@ -535,7 +531,6 @@ app.controller('masteryCommentsController', ['$scope', '$http', function ($scope
         }
     }).then(function (response) {
         $scope.comments = response.data.comments
-        console.log($scope.comments);
 
     });
 
@@ -550,7 +545,7 @@ app.controller('masteryCommentsController', ['$scope', '$http', function ($scope
                 comment: $scope.comment
             }
         }).then(function (response) {
-            $scope.comments.push(response.data.comment);
+            $scope.comments.unshift(response.data.comment);
             console.log($scope.comments);
             $scope.name = '';
             $scope.summoner_name = '';
@@ -570,7 +565,6 @@ app.controller('spellCommentsController', ['$scope', '$http', function ($scope, 
         }
     }).then(function (response) {
         $scope.comments = response.data.comments
-        console.log($scope.comments);
 
     });
 
@@ -585,7 +579,7 @@ app.controller('spellCommentsController', ['$scope', '$http', function ($scope, 
                 comment: $scope.comment
             }
         }).then(function (response) {
-            $scope.comments.push(response.data.comment);
+            $scope.comments.unshift(response.data.comment);
             console.log($scope.comments);
             $scope.name = '';
             $scope.summoner_name = '';

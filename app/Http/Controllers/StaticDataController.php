@@ -40,7 +40,7 @@ class StaticDataController extends Controller
 
     public function get_champion_comments(Request $request)
     {
-        $champion = Champion::where('name',$request->champion_name)->first();   
+        $champion = Champion::where('seo',$request->champion_name)->first();   
         return response()->json([
             'comments'=>$champion->comments
         ]);

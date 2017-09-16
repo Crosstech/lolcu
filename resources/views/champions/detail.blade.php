@@ -1,7 +1,7 @@
 @extends('layouts.app') 
 
 @section('title')
- {{ $champion->name }}
+ {!! $champion->name !!}
 @endsection
 
 @section('keywords')
@@ -10,7 +10,7 @@ lol,sampiyon,sihirdar,çar,{{$champion->name}},build,eşya,set, eşya seti,rün,
 
 @section('scripts')
 <script>
-    window.champion = <?= json_encode($champion->name); ?>;   
+    window.champion = <?= json_encode($champion->seo); ?>;   
 </script>
 @endsection
 
@@ -204,7 +204,7 @@ lol,sampiyon,sihirdar,çar,{{$champion->name}},build,eşya,set, eşya seti,rün,
                 <div class="col-md-9">
                   <div class="comment-item" ng-repeat = "comment in comments">
                     <p class="body" ng-bind="comment.comment"></p>
-                    <p class="author" ng-bind="comment.name - comment.summoner_name"></p>
+                    <p class="author" ng-bind-template="<%comment.name%> - <%comment.summoner_name%>"></p>
                   </div>
                   <p ng-if="comments.length <=0" class="not-found">
                     Yorum Bulunamadı.

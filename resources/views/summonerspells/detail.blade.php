@@ -63,7 +63,7 @@ lol,{{$spell->name}},{{$spell->seo}},adc,sup,jung,mid,solo,tank,büyü,sihirdar,
                   <div class="col-md-9">
                     <div class="comment-item" ng-repeat = "comment in comments">
                       <p class="body" ng-bind="comment.comment"></p>
-                      <p class="author" ng-bind="comment.name - comment.summoner_name"></p>
+                      <p class="author" ng-bind-template="<%comment.name%> - <%comment.summoner_name%>"></p>
                     </div>
                     <p ng-if="comments.length <=0" class="not-found">
                       Yorum Bulunamadı.

@@ -39,7 +39,7 @@ class ChampionsController extends Controller
 
     public function save_comment(Request $request)
     {
-        $champion = Champion::where('name',$request->champion_name)->first();
+        $champion = Champion::where('seo',$request->champion_name)->first();
 
         $comment = new Comment();
         $comment->name = $request->name;

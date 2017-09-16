@@ -35,6 +35,6 @@ class Item extends Model
 
     public function comments()
    {
-       return $this->belongsToMany('App\Models\Comment','item_comments','item_id','comment_id');
+       return $this->belongsToMany('App\Models\Comment','item_comments','item_id','comment_id')->orderBy('created_at', 'desc');
    }
 }

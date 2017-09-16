@@ -50,7 +50,7 @@ class Champion extends Model
 
    public function comments()
    {
-       return $this->belongsToMany('App\Models\Comment','champion_comments','champion_id','comment_id');
+       return $this->belongsToMany('App\Models\Comment','champion_comments','champion_id','comment_id')->orderBy('created_at', 'desc');
    }
 
    public function counters()

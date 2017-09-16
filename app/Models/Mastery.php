@@ -32,6 +32,6 @@ class Mastery extends Model
 
     public function comments()
    {
-       return $this->belongsToMany('App\Models\Comment','mastery_comments','mastery_id','comment_id');
+       return $this->belongsToMany('App\Models\Comment','mastery_comments','mastery_id','comment_id')->orderBy('created_at', 'desc');
    }
 }

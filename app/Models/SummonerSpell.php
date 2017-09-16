@@ -27,6 +27,6 @@ class SummonerSpell extends Model
 
     public function comments()
    {
-       return $this->belongsToMany('App\Models\Comment','summonerSpell_comments','spell_id','comment_id');
+       return $this->belongsToMany('App\Models\Comment','summonerSpell_comments','spell_id','comment_id')->orderBy('created_at', 'desc');
    }
 }
