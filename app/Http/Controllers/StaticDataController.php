@@ -38,6 +38,47 @@ class StaticDataController extends Controller
         return $champion;
     }
 
+    public function get_champions_by_ad()
+    {
+        $champions= Champion::orderBy('attack_damage','desc')->take(20)->get();
+        return view('mosts.ad',compact('champions'));
+    }
+
+    public function get_champions_by_hp()
+    {
+        $champions= Champion::orderBy('hp','desc')->take(20)->get();
+        return view('mosts.hp',compact('champions'));
+    }
+    public function get_champions_by_mp()
+    {
+        $champions= Champion::orderBy('mp','desc')->take(20)->get();
+        return view('mosts.mp',compact('champions'));
+    }
+    public function get_champions_by_range()
+    {
+        $champions= Champion::orderBy('attack_range','desc')->take(20)->get();
+        return view('mosts.range',compact('champions'));
+    }
+    
+    public function get_champions_by_speed()
+    {
+        $champions= Champion::orderBy('move_speed','desc')->take(20)->get();
+        return view('mosts.speed',compact('champions'));
+    }
+
+    public function get_champions_by_armor()
+    {
+        $champions= Champion::orderBy('armor','desc')->take(20)->get();
+        return view('mosts.armor',compact('champions'));
+    }
+
+    public function get_champions_by_mr()
+    {
+        $champions= Champion::orderBy('spell_block','desc')->take(20)->get();
+        return view('mosts.mr',compact('champions'));
+    }
+
+
     public function get_champion_comments(Request $request)
     {
         $champion = Champion::where('seo',$request->champion_name)->first();   

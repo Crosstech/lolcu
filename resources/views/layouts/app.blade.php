@@ -35,7 +35,7 @@
     <link href="lolcu/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css">
     
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+    <!--<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
@@ -47,7 +47,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">-->
     <link rel="manifest" href="favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
@@ -158,6 +158,56 @@
                         <i class="fa fa-book" aria-hidden="true"></i>
                         <p>Lol Sözlüğü</p>
                     </a>
+                </li>
+
+
+
+
+                <li class="dropdown-sub">
+                    <a href="/">
+                        <i class="fa fa-magic"></i>  
+                        <p>
+                            EN'ler
+                            <span class="caret"></span>
+                        </p>
+                    </a>
+                    <ul style="list-style: none; padding-left: 20px; display: none;">
+                        <li>
+                            <a href="/lol-en-yuksek-hasar-veren-sampiyonlar">
+                                <p class="mr0">En Yüksek Hasara Sahip Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lol-en-cok-cani-olan-sampiyonlar">
+                                <p class="mr0">En Çok Canı Olan Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lol-en-cok-manasi-olan-sampiyonlar">
+                                <p class="mr0">En Çok Manası Olan Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lol-en-cok-menzili-olan-sampiyonlar">
+                                <p class="mr0">En Çok Menzili Olan Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lol-hareket-hizi-en-yuksek-sampiyonlar">
+                                <p class="mr0">Hareket Hızı En Yüksek Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lol-en-cok-zirha-sahip-sampiyonlar">
+                                <p class="mr0">En Çok Zırha Sahip Şampiyonlar</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/lol-en-cok-buyu-direncine-sahip-sampiyonlar">
+                                <p class="mr0">En Çok Büyü Direncine Sahip Şampiyonlar</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
 

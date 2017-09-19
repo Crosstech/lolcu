@@ -259,6 +259,39 @@ Route::post('/counter-mapper',[
 ]);
 
 
+Route::get('lol-en-yuksek-hasar-veren-sampiyonlar',[
+	'uses'=>'StaticDataController@get_champions_by_ad',
+	'as'=>'sd.ad'
+	]);
+
+Route::get('lol-en-cok-cani-olan-sampiyonlar',[
+'uses'=>'StaticDataController@get_champions_by_hp',
+'as'=>'sd.hp'
+]);
+Route::get('lol-en-cok-manasi-olan-sampiyonlar',[
+'uses'=>'StaticDataController@get_champions_by_mp',
+'as'=>'sd.mp'
+]);
+
+Route::get('lol-en-cok-menzili-olan-sampiyonlar',[
+'uses'=>'StaticDataController@get_champions_by_range',
+'as'=>'sd.range'
+]);
+
+Route::get('lol-hareket-hizi-en-yuksek-sampiyonlar',[
+'uses'=>'StaticDataController@get_champions_by_speed',
+'as'=>'sd.ms'
+]);
+
+Route::get('lol-en-cok-zirha-sahip-sampiyonlar',[
+'uses'=>'StaticDataController@get_champions_by_armor',
+'as'=>'sd.armor'
+]);
+
+Route::get('lol-en-cok-buyu-direncine-sahip-sampiyonlar',[
+'uses'=>'StaticDataController@get_champions_by_mr',
+'as'=>'sd.mr'
+]);
 
 
 Route::get('/not-found', function(){
