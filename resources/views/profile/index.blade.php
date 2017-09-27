@@ -50,7 +50,7 @@
                             <span ng-bind="p.league[0].tier +' '+p.league[0].rank ">UNRANKED</span>
                         </td>
                         <td>
-                            <a ng-href="/sampiyonlar/<%champions[p.summonerId]%>">
+                            <a ng-href="/sampiyonlar/<%champions[p.summonerId]%>" target="_blank">
                                 <img ng-src="/img/champion/<%champions[p.summonerId].split(' ').join('')%>.png">
                            </a>
                          </td>

@@ -293,12 +293,33 @@ Route::get('lol-en-cok-buyu-direncine-sahip-sampiyonlar',[
 'as'=>'sd.mr'
 ]);
 
+Route::get('/add_news',[
+	'uses'=>'NewsController@create',
+	'as'=>'news.create'
+]);
+
+Route::get('/get_news',[
+	'uses'=>'NewsController@get_news',
+	'as'=>'news.get'
+]);
+
+Route::get('/haberler/{seo}',[
+	'uses'=>'NewsController@get_news_detail',
+	'as'=>'news.detail'
+]);
+
+Route::get('/etiketler/{e}',[
+	'uses'=>'NewsController@get_news_by_tag',
+	'as'=>'news.by_tag'
+]);
+
 
 Route::get('/not-found', function(){
 	return view('notfound');
 });
 
 Route::post('/profile_get', 'ProfileController@profile_get');
+Route::post('/save_news','NewsController@save_news');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

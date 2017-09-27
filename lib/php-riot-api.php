@@ -41,7 +41,7 @@ class RiotApi {
 	const API_URL_SUMMONER_3 = 'https://{platform}.api.riotgames.com/lol/summoner/v3/';
 
 
-	const API_KEY = 'RGAPI-0f526cfa-1455-41b0-a24a-d7ec409df940';
+	const API_KEY = 'RGAPI-0884d5a6-0c51-459c-ae97-78202cec3258';
 
 	// Rate limit for 10 minutes
 	const LONG_LIMIT_INTERVAL = 600;

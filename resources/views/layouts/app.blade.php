@@ -64,6 +64,8 @@
         console.log("Selam! Buraya bakıyorsan sen de bizdensin :) info@crosstech.com.tr adresine konusu `f12` olan ve kendinden bahseden bir mail atar mısın? Birlikte bir kahve içmek dileğiyle. Kendine iyi bak!")
 		window.Lolcu = <?= json_encode([ 'csrfToken' => csrf_token() ]); ?>
 	</script>
+    <script src="js/vendor/jquery-3.2.1.min.js" type="text/javascript"></script>
+    
     @yield('scripts')
 </head>
 <body>
@@ -212,6 +214,12 @@
 
 
                 @if(Auth::check())
+                <li>
+                    <a href="/add_news">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <p>Haber Girişi</p>
+                    </a>
+                </li>
                  <li>
                     <a href="/counter-mapper">
                         <i class="fa fa-book" aria-hidden="true"></i>
@@ -282,7 +290,6 @@
         </div>
     </div>
 </div>
-<script src="js/vendor/jquery-3.2.1.min.js" type="text/javascript"></script>
 <script src="lolcu/js/bootstrap.min.js" type="text/javascript"></script>
 <!-- Angular JS --> 
 <script src="js/vendor/angular.min.js" type="text/javascript"></script>
